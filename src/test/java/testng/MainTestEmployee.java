@@ -23,7 +23,7 @@ public class MainTestEmployee {
 
     @AfterClass
     public void close() {
-        Driver.getDriver().quit();
+        Driver.closeDriver();
     }
 
 
