@@ -1,5 +1,6 @@
 package testng;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -20,7 +21,7 @@ public class MainTestManager {
 
     @AfterClass
     public void close(){
-        Driver.getDriver().quit();
+        Driver.closeDriver();
     }
 
     /* This test logs in as employee and verify if
@@ -34,4 +35,5 @@ public class MainTestManager {
         Assert.assertTrue(homePage.inventoryModuleTab.getText().contains("Inventory"), "Not DISPLAYED");
         homePage.inventoryModuleTab.click();
     }
+
 }
