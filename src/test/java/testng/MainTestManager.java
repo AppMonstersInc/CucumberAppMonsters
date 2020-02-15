@@ -37,7 +37,7 @@ public class MainTestManager {
      Inventory Module
 
      */
-    @Test(priority = 0  )
+    @BeforeClass
     public void verifyHomePage() {
         SeleniumUtils.pause(2);
         Assert.assertTrue(homePage.inventoryModuleTab.getText().contains("Inventory"), "Not DISPLAYED");
