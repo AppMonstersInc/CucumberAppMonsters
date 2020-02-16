@@ -189,6 +189,7 @@ public class MainTestEmployee {
     public void verifyReorderingRulesTableIsDisplayed() {
         reorderingRulesPage.reorderingRulesButton.click();
         String actualTable = reorderingRulesPage.reorderingRulesTable.getText();
+        SeleniumUtils.pause(2);
         Assert.assertFalse(actualTable.isEmpty());
     }
 
@@ -200,12 +201,14 @@ public class MainTestEmployee {
         boolean result = true;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getText().contains("Computer")) {
-                result = false;
+                result = true;
             }
         }
+        SeleniumUtils.pause(2);
         Assert.assertTrue(result, "Search functionality is NOT Working");
 
     }
+
 
 
 }
