@@ -27,7 +27,7 @@ public class MainTestEmployee {
         BriteUtils.login_as_employee();
     }
 
-      @AfterClass
+    @AfterClass
     public void close() {
         Driver.closeDriver();
     }
@@ -115,8 +115,9 @@ public class MainTestEmployee {
         // inventory adjustments click
         inventoryAdjustmentsPage.inventoryAdjustmentsButton.click();
     }
-        @Test (priority =6 )
-                public void createButton(){
+
+    @Test(priority = 6)
+    public void createButton() {
         // inside inventory adjsutments module create button is displayed
         Assert.assertTrue(inventoryAdjustmentsPage.createButtonVerify.isDisplayed(),
                 "Create button is NOT displayed!!!");
@@ -126,20 +127,23 @@ public class MainTestEmployee {
         inventoryAdjustmentsPage.alertAcceptButton.click();
         // click to import button
     }
-        @Test (priority =7 )
-                public void importButton() {
-            inventoryAdjustmentsPage.importButtonVerify.click();
-            // to go back to inventory adjustments page
-            inventoryAdjustmentsPage.cancelButtonPress.click();
-            // search button verify
-        }
-        @Test(priority = 8)
-                public void searchBox(){
+
+    @Test(priority = 7)
+    public void importButton() {
+        inventoryAdjustmentsPage.importButtonVerify.click();
+        // to go back to inventory adjustments page
+        inventoryAdjustmentsPage.cancelButtonPress.click();
+        // search button verify
+    }
+
+    @Test(priority = 8)
+    public void searchBox() {
         Assert.assertTrue(inventoryAdjustmentsPage.searchBoxVerify.isDisplayed(),
                 "search button is NOT displayed!!!");
         inventoryAdjustmentsPage.searchBoxVerify.click();
 
     }
+
     /*
     as a user i can navigate to search button in the inventory adjustments page
     as auser when i click search button it should allow us to search products
@@ -147,7 +151,7 @@ public class MainTestEmployee {
     as a user i can click the offered products to choose
      */
     @Test(priority = 9)   // Jurabek
-    public void searchBoxVerifyUser(){
+    public void searchBoxVerifyUser() {
         inventoryAdjustmentsPage.inventoryAdjustmentsButton.click();
         // go to search button
         Assert.assertTrue(inventoryAdjustmentsPage.searchBoxVerify.isDisplayed(),
@@ -159,9 +163,49 @@ public class MainTestEmployee {
                 "First item is NOT displayed!!!");
     }
 
+    @Test(priority = 10)
+    public void validateTheProductRulesHeader() {
+        SeleniumUtils.pause(2);
+        reorderingRulesPage.reorderingRulesButton.click();
+        SeleniumUtils.pause(2);
+        reorderingRulesPage.nameOfProductColumn.click();
+        String actualResultHeader = reorderingRulesPage.reorderingRulesHeader.getText();
+        String expectedResultHeader = "Rules";
+        Assert.assertTrue(actualResultHeader.contains(expectedResultHeader), "Actual result not equal to expected one");
 
+    }
 
+    @Test(priority = 11)
+    public void validateTheProductName() {
+        reorderingRulesPage.reorderingRulesButton.click();
+        reorderingRulesPage.reorderingRulesName.click();
+        String actualResultHeader = reorderingRulesPage.reorderingRulesName.getText();
+        String expectedResultHeader = "Name";
+        Assert.assertTrue(actualResultHeader.contains(expectedResultHeader), "Actual result not equal to expected one");
 
+    }
+
+    @Test(priority = 12)
+    public void verifyReorderingRulesTableIsDisplayed() {
+        reorderingRulesPage.reorderingRulesButton.click();
+        String actualTable = reorderingRulesPage.reorderingRulesTable.getText();
+        Assert.assertFalse(actualTable.isEmpty());
+    }
+
+    @Test(priority = 13)
+    public void verifySearchFunctionalityOnReorderingRulesPage() {
+        reorderingRulesPage.reorderingRulesButton.click();
+        reorderingRulesPage.searchInput.sendKeys("Computer" + Keys.ENTER);
+        List<WebElement> list = reorderingRulesPage.firstColumns;
+        boolean result = true;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getText().contains("Computer")) {
+                result = false;
+            }
+        }
+        Assert.assertTrue(result, "Search functionality is NOT Working");
+
+    }
 
 
 }
