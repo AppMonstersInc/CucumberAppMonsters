@@ -28,10 +28,10 @@ public class ReorderingRulesPage {
     @FindBy(xpath = "//*[@class='o_horizontal_separator']")
     public WebElement reorderingRulesHeader;
 
-    @FindBy(xpath = " (//*[contains(text(),'Name')])[2]")
+    @FindBy(xpath = " (//[contains(text(),'Name')])[2]")
     public WebElement reorderingRulesName;
 
-    @FindBy(xpath = " (//*[contains(text(),'Name')])[2]")
+    @FindBy(xpath = "(//*[contains(text(),'Name')])[2]")
     public WebElement reorderingRulesTable;
 
     @FindBy(xpath = "//*[@class='o_searchview_input']")
