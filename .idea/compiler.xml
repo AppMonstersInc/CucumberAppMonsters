@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="APP_Monsters_BRITE_INVENTORYnew" />
+        <module name="APP_Monsters_BRITE_INVENTORY" />
         <module name="APP_MONSTERS_INVENTORY" />
       </profile>
     </annotationProcessing>

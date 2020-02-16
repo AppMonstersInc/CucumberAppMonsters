@@ -1,8 +1,10 @@
 package testng;
 
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -10,6 +12,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.InventoryAdjustmentsPage;
 import pages.ReorderingRulesPage;
+import pages.ScarpPage;
 import utilities.BriteUtils;
 import utilities.Driver;
 import utilities.SeleniumUtils;
@@ -161,9 +164,64 @@ public class MainTestEmployee {
         inventoryAdjustmentsPage.searchBoxVerify.sendKeys("apple" + Keys.ENTER + Keys.ENTER);
         Assert.assertTrue(inventoryAdjustmentsPage.firstTextVerify.isDisplayed(),
                 "First item is NOT displayed!!!");
+
+        SeleniumUtils.pause(2);
     }
+    //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>\\
+
+    // $$ Moe.H $$ //
+
+    // Create Scrap Products
 
     @Test(priority = 10)
+    public void Create_Scrap_Products(){
+        ScarpPage scarpPage = new ScarpPage();
+SeleniumUtils.pause(2);
+        scarpPage.scrapButton.click();
+        //User its on Scrap home Page!!
+        SeleniumUtils.pause(2);
+        scarpPage.createButton.click();
+        //User should see in form Sheet
+        Assert.assertTrue(scarpPage.formSheet.isDisplayed(),"Form Sheet it's not Displayed!!");
+        SeleniumUtils.pause(2);
+        //----------------------------------\\
+        //Product text button is correct!
+
+        String actualTxt = scarpPage.productButtonTxt.getText();
+        String expectedTxt = "Product";
+
+        Assert.assertTrue(actualTxt.equals(expectedTxt),"WRONG PRODUCT TEXT!!!!");
+        //--------------------------------------------//
+        // Quantity	Button!
+
+        scarpPage.quantityButton.clear();
+        scarpPage.quantityButton.sendKeys("2.00");
+        Assert.assertTrue(scarpPage.QuantityButtonText.getText().equals("Quantity"),"Quantity button TEXT is WRONG!!");
+        //----------------------------------------------\\
+        // Source Document!
+
+        scarpPage.sourceDocumentInputFiled.sendKeys("Example0006");
+        Assert.assertTrue(scarpPage.sourceDocumentText.getText().equals("Source Document"),"Source Document field TEXT is WRONG!!");
+
+        //--------------------------------------------------\\
+        // Expected Date!
+        scarpPage.expectedDateField.click();
+        SeleniumUtils.pause(3);
+        Assert.assertTrue(scarpPage.expectedDateFieldText.getText().equals("Expected Date"),"Expected Date field TEXT is WRONG!!");
+        //-----------------------------------------------------\\
+        // Save button!
+
+        scarpPage.discardButton.click();
+
+        scarpPage.okButtonWarning.click();
+
+
+    }
+
+
+
+
+    @Test(priority = 11)
     public void validateTheProductRulesHeader() {
         SeleniumUtils.pause(2);
         reorderingRulesPage.reorderingRulesButton.click();
@@ -175,7 +233,7 @@ public class MainTestEmployee {
 
     }
 
-    @Test(priority = 11)
+    @Test(priority = 12)
     public void validateTheProductName() {
         reorderingRulesPage.reorderingRulesButton.click();
         reorderingRulesPage.reorderingRulesName.click();
@@ -185,7 +243,7 @@ public class MainTestEmployee {
 
     }
 
-    @Test(priority = 12)
+    @Test(priority = 13)
     public void verifyReorderingRulesTableIsDisplayed() {
         reorderingRulesPage.reorderingRulesButton.click();
         String actualTable = reorderingRulesPage.reorderingRulesTable.getText();
@@ -193,7 +251,7 @@ public class MainTestEmployee {
         Assert.assertFalse(actualTable.isEmpty());
     }
 
-    @Test(priority = 13)
+    @Test(priority = 14)
     public void verifySearchFunctionalityOnReorderingRulesPage() {
         reorderingRulesPage.reorderingRulesButton.click();
         reorderingRulesPage.searchInput.sendKeys("Computer" + Keys.ENTER);
