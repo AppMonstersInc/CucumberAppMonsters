@@ -1,5 +1,6 @@
 package testng;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.InventoryAdjustmentsPage;
+import pages.InventoryFunctionality_Reporting;
 import pages.ReorderingRulesPage;
 import utilities.BriteUtils;
 import utilities.Driver;
@@ -21,6 +23,7 @@ public class MainTestManager {
     HomePage homePage = new HomePage();
     ReorderingRulesPage reorderingRulesPage = new ReorderingRulesPage();
     InventoryAdjustmentsPage inventoryAdjustmentsPage = new InventoryAdjustmentsPage();
+    InventoryFunctionality_Reporting inventoryFunctionality_reporting = new InventoryFunctionality_Reporting();
 
     @BeforeClass
     public void login() {
@@ -227,6 +230,54 @@ public class MainTestManager {
         }
         SeleniumUtils.pause(2);
         Assert.assertTrue(result, "Search functionality is NOT Working");
+
+    }
+    /* // Jurabek
+    as a manager, i can go to Inventory tab
+    as a manager, i can find Inventory from Reporting page
+    as a manager, i can click Inventory button
+    as a manager, I should be navigated to main Inventory
+     */
+
+    @Test(priority = 15)
+    public void verifyInventoryFromReports(){
+        // verify Inventory functionality is displayed
+        Assert.assertTrue(inventoryFunctionality_reporting.inventoryFuncButton.isDisplayed(),
+                "Inventory functinality button is NOT displayed!!!");
+
+    }
+    @Test(priority = 16)
+    public void verifyCancelButton(){
+        // verify cancel button is clicking inside Inventory func
+        inventoryFunctionality_reporting.inventoryFuncButton.click();
+       inventoryFunctionality_reporting.cancelButton.click();
+
+    }
+
+
+    @Test(priority = 17)
+    public void InventoryReportPage(){
+      //  as a manager i can click to inventory button
+        inventoryFunctionality_reporting.inventoryFuncButton.click();
+      // as a manager i can see "Inventory Report" text
+        Assert.assertTrue(inventoryFunctionality_reporting.inventoryPageMainText.isDisplayed(),
+                "Inventory text is NOT displayed!!!");
+        //as a manager i can click to Retrieve button
+        inventoryFunctionality_reporting.retrieveButton.click();
+        //Current Inventory button has to be selected by default
+        inventoryFunctionality_reporting.inventoryFuncButton.click();
+        Assert.assertTrue(inventoryFunctionality_reporting.firstRadioButton.isSelected(),
+                "By default first radio button is NOT selected!!!");
+       // "Current Inventory" text is displayed
+        Assert.assertTrue(inventoryFunctionality_reporting.firstRadioButtonText.isDisplayed(),
+                "First button text is NOT displayed!!!");
+       // Second radio button should not be selected
+        Assert.assertFalse(inventoryFunctionality_reporting.secondRadioButton.isSelected(),
+                "Second radio button IS SELECTED!!!");
+        //  Second radio button text is displayed
+        Assert.assertTrue(inventoryFunctionality_reporting.secondRadioButtonText.isDisplayed(),
+                "Second button text is NOT displayed!!!");
+        inventoryFunctionality_reporting.cancelButton.click();
 
     }
 
