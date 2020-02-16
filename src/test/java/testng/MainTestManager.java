@@ -84,7 +84,7 @@ public class MainTestManager {
                 count++;
             }
         }
-
+        SeleniumUtils.pause(2);
         Assert.assertEquals(count, 4, "Not all columns in the list");
 
     }
@@ -219,12 +219,13 @@ public class MainTestManager {
         reorderingRulesPage.reorderingRulesButton.click();
         reorderingRulesPage.searchInput.sendKeys("Computer" + Keys.ENTER);
         List<WebElement> list = reorderingRulesPage.firstColumns;
-        boolean result = true;
+        boolean result = false;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getText().contains("Computer")) {
-                result = false;
+                result = true;
             }
         }
+        SeleniumUtils.pause(2);
         Assert.assertTrue(result, "Search functionality is NOT Working");
 
     }
