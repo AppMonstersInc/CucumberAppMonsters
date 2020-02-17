@@ -1,5 +1,7 @@
 package testng;
 
+import com.github.javafaker.Faker;
+import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -9,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.InventoryAdjustmentsPage;
+import pages.ProductsPageManager;
 import pages.ReorderingRulesPage;
 import utilities.BriteUtils;
 import utilities.Driver;
@@ -21,6 +24,7 @@ public class MainTestManager {
     HomePage homePage = new HomePage();
     ReorderingRulesPage reorderingRulesPage = new ReorderingRulesPage();
     InventoryAdjustmentsPage inventoryAdjustmentsPage = new InventoryAdjustmentsPage();
+    ProductsPageManager productsPageManager = new ProductsPageManager();
 
     @BeforeClass
     public void login() {
@@ -169,5 +173,75 @@ public class MainTestManager {
                 "First item is NOT displayed!!!");
 
     }
+
+    // As a manager I should be able to create product inside products page
+    @Test (priority = 10)//Sultan
+    public void productsButtonVerification(){
+        // Verify Productions button is displayed
+        Assert.assertTrue(productsPageManager.productsButton.isDisplayed(),"Products button is NOT displayed");
+    }
+
+
+    @Test (priority = 11)//Sultan
+    public void productsPageVerification(){
+        //    Verify Productions button is displayed
+        //    Manager should be able to see Products button at the Inventory page
+        //    Click to the Products button
+        //    Manager sholud be navigated to Products page
+        productsPageManager.productsButton.click();
+        String actualResult = productsPageManager.headerOfProducts.getText();
+        String expectedResult = "Products";
+        SeleniumUtils.pause(2);
+
+        Assert.assertTrue(actualResult.contains(expectedResult),"User is NOT navigated to PRODUCTS PAGE");
+    }
+
+    @Test (priority = 12)//Sultan
+    public void createButtonVerification(){
+        //    Verify create button is  displayed
+        //    Manager should be navigated to create product page
+        productsPageManager.productsButton.click();
+        Assert.assertTrue(productsPageManager.createButton.isDisplayed(),"Create Button is not displayed");
+    }
+
+    @Test (priority = 13)//Sultan
+    public void createFormVerification(){
+        //    Manager should be able to to fill out form to create product
+        productsPageManager.productsButton.click();
+        SeleniumUtils.pause(2);
+        productsPageManager.createButton.click();
+        SeleniumUtils.pause(2);
+        Assert.assertTrue(productsPageManager.createForm.isDisplayed(),"Create form is NOT displayed");
+    }
+    @Test (priority = 14)//Sultan
+    public void validateCreateNewProduct(){
+        //    Click to save	Verify that product is added to the products list
+        Faker faker = new Faker();
+        String str = faker.company().name();
+        productsPageManager.productsButton.click();
+        productsPageManager.createButton.click();
+        productsPageManager.productNameInput.sendKeys(str);
+        productsPageManager.newProductSalesPrice.click();
+        productsPageManager.newProductSalesPrice.clear();
+        productsPageManager.newProductSalesPrice.sendKeys(faker.number().digits(2));
+        productsPageManager.newProductCost.click();
+        productsPageManager.newProductCost.clear();
+        productsPageManager.newProductCost.sendKeys(faker.number().digits(3));
+        productsPageManager.newProductSaveButton.click();
+        productsPageManager.productsButton.click();
+        SeleniumUtils.pause(2);
+        productsPageManager.searchBox.click();
+        productsPageManager.searchBox.sendKeys(str+Keys.ENTER);
+        SeleniumUtils.pause(2);
+        productsPageManager.fakeResult.click();
+        SeleniumUtils.pause(2);
+        Assert.assertTrue(productsPageManager.fakeResultName.getText().contains(str),"Created item is NOT in the list");
+    }
+
+
+
+
+
+
 
 }
