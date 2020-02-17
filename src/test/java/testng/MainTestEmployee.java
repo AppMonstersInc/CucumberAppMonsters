@@ -1,8 +1,12 @@
 package testng;
 
 
+
 import com.github.javafaker.Faker;
 import org.apache.commons.lang3.builder.ToStringExclude;
+
+import com.google.common.base.Verify;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -10,7 +14,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import pages.*;
+
+import pages.HomePage;
+import pages.InventoryAdjustmentsPage;
+import pages.ProductsPageEmployee;
+import pages.ReorderingRulesPage;
+
 import utilities.BriteUtils;
 import utilities.Driver;
 import utilities.SeleniumUtils;
@@ -22,8 +33,12 @@ public class MainTestEmployee {
     HomePage homePage = new HomePage();
     ReorderingRulesPage reorderingRulesPage = new ReorderingRulesPage();
     InventoryAdjustmentsPage inventoryAdjustmentsPage = new InventoryAdjustmentsPage();
+
     TransferPage transferPage=new TransferPage();
     Faker faker=new Faker();
+
+    ProductsPageEmployee productsPageEmployee = new ProductsPageEmployee();
+
 
     @BeforeClass
     public void login() {
@@ -296,6 +311,50 @@ SeleniumUtils.pause(2);
         Assert.assertTrue(transferPage.newStockForm.isDisplayed(),"New Form did'nt displayed");
 
     }
+
+
+
+    // As an employee I should be able to see Products button inside the Inventory module
+    @Test(priority = 19) //Sultan
+    // Verify Products button is displayed
+    public void productsButtonVerification(){
+        Assert.assertTrue(productsPageEmployee.productsButton.isDisplayed(),"Products button is NOT DISPLAYED");
+    }
+
+    @Test(priority = 20) // Sultan
+    // Verify Products page is opened
+    // Verify list of products items displayed
+    public void verificationOfInsideProductsPage(){
+        productsPageEmployee.productsButton.click();
+        Assert.assertTrue(productsPageEmployee.itemsList.isDisplayed(),"List of items is NOT Displayed");
+    }
+
+    @Test(priority = 21) //Sultan
+    public void searchBoxVerification(){
+        // Verify search box is displayed
+        productsPageEmployee.productsButton.click();
+        Assert.assertTrue(productsPageEmployee.searchBoxInput.isDisplayed(),"Search box input is not displayed");
+    }
+
+    @Test(priority = 22)//Sultan
+    public void searchBoxInputValidation(){
+        // Verify items listed by name as searched
+        productsPageEmployee.productsButton.click();
+        productsPageEmployee.searchBoxInput.sendKeys("book");
+        Assert.assertTrue(productsPageEmployee.searchedItemList.isDisplayed(),"Searched item list is not displayed");
+    }
+
+    @Test(priority = 23) //Sultan
+    public void searchedItemVerification(){
+        // Click to the selected item
+        // Employee should be navigated to selected items page
+        productsPageEmployee.productsButton.click();
+        SeleniumUtils.pause(2);
+        productsPageEmployee.searchBoxInput.sendKeys("book");
+        productsPageEmployee.searchedItemButton.click();
+        Assert.assertTrue(productsPageEmployee.searchedItemForm.isDisplayed(),"Searched item description is NOT displayed");
+    }
+
 
 
 
