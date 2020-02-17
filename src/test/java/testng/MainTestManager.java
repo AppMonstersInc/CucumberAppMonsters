@@ -27,10 +27,10 @@ public class MainTestManager {
         BriteUtils.login_as_manager();
     }
 
-    @AfterClass
-    public void close(){
-        Driver.closeDriver();
-    }
+//    @AfterClass
+//    public void close(){
+//        Driver.closeDriver();
+//    }
 
     /* This test logs in as employee and verify if
      Inventory Module is  displayed and navigates inside
