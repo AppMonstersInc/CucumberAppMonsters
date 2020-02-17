@@ -33,4 +33,5 @@ public class InventoryFunctionality_Reporting {
     @FindBy(css = "button[special='cancel']")
     public WebElement cancelButton;
 
+
 }
