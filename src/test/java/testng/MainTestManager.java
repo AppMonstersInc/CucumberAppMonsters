@@ -34,4 +34,5 @@ public class MainTestManager {
         Assert.assertTrue(homePage.inventoryModuleTab.getText().contains("Inventory"), "Not DISPLAYED");
         homePage.inventoryModuleTab.click();
     }
+
 }
