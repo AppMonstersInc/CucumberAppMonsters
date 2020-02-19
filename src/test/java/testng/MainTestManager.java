@@ -370,7 +370,112 @@ public class MainTestManager {
         SeleniumUtils.pause(2);
         Assert.assertTrue(productsPageManager.fakeResultName.getText().contains(str), "Created item is NOT in the list");
     }
+    @Test(priority = 24)
+    public void Create_Scrap_Products(){
+        ScarpPage scarpPage = new ScarpPage();
+        SeleniumUtils.pause(2);
+        scarpPage.scrapButton.click();
+        //User its on Scrap home Page!!
+        SeleniumUtils.pause(2);
+        scarpPage.createButton.click();
+        //User should see in form Sheet
+        Assert.assertTrue(scarpPage.formSheet.isDisplayed(),"Form Sheet it's not Displayed!!");
+        SeleniumUtils.pause(2);
+        //----------------------------------\\
+        //Product text button is correct!
 
+        String actualTxt = scarpPage.productButtonTxt.getText();
+        String expectedTxt = "Product";
+
+        Assert.assertTrue(actualTxt.equals(expectedTxt),"WRONG PRODUCT TEXT!!!!");
+        //--------------------------------------------//
+        // Quantity Button!
+
+        scarpPage.quantityButton.clear();
+        scarpPage.quantityButton.sendKeys("2.00");
+        Assert.assertTrue(scarpPage.QuantityButtonText.getText().equals("Quantity"),"Quantity button TEXT is WRONG!!");
+        //----------------------------------------------\\
+        // Source Document!
+
+        scarpPage.sourceDocumentInputFiled.sendKeys("Example0006");
+        Assert.assertTrue(scarpPage.sourceDocumentText.getText().equals("Source Document"),"Source Document field TEXT is WRONG!!");
+
+        //--------------------------------------------------\\
+        // Expected Date!
+        scarpPage.expectedDateField.click();
+        SeleniumUtils.pause(3);
+        Assert.assertTrue(scarpPage.expectedDateFieldText.getText().equals("Expected Date"),"Expected Date field TEXT is WRONG!!");
+        //-----------------------------------------------------\\
+        // Save button!
+
+        scarpPage.discardButton.click();
+
+        scarpPage.okButtonWarning.click();
+
+        SeleniumUtils.pause(3);
+    }
+
+
+    @Test(priority = 25)
+    public void Import_Scrap_Products(){
+        ScarpPage scarpPage = new ScarpPage();
+        scarpPage.scrapButton.click();
+        scarpPage.importButton.click();
+        //------------------------------------\\
+        // User should be able to see Test Import Button!
+
+        Assert.assertTrue(scarpPage.testImportButton.isDisplayed(),"Test Import button is Not Displayed!!");
+        //---------------------------------------------\\
+        // User should be able to see The Import Button in 2nd Page!
+
+        Assert.assertTrue(scarpPage.importButton2ndPage.isDisplayed(),"Import button 2nd page is Not Displayed!!");
+        //-----------------------------------------------\\
+        //User should be able to verify, 'Select a CSV or Excel file to import.'
+        Assert.assertTrue(scarpPage.verifyText.isDisplayed(),"Text is Not Displayed!!");
+        //-----------------------------------------------------\\
+        // User should be able to see Reload file!
+        Assert.assertTrue(scarpPage.reloadFileButton.isDisplayed(),"Reload file is Not Displayed!!");
+        //-------------------------------------------------------\\
+        // User should be able to see Load Button!
+        Assert.assertTrue(scarpPage.loadFileButton.isDisplayed(),"Load Button is Not Displayed!!");
+        //------------------------------------------------------------\\
+        // User should be able to see the Input Field!
+        Assert.assertTrue(scarpPage.inputField.isDisplayed(),"Input Field is Not Displayed!!");
+        //-----------------------------------------------------------------\\
+        // User should able to see Help Button!
+        Assert.assertTrue(scarpPage.helpButton.isDisplayed(),"Help Button is Not Displayed!!");
+        //-----------------------------------------------------------------\\
+        // User should be able see Cancel!
+        Assert.assertTrue(scarpPage.CancelButton.isDisplayed(),"Cancel Button is Not Displayed");
+
+        SeleniumUtils.pause(2);
+    }
+
+    @Test(priority = 26)
+    public void ScrapSearchButtonsVerify(){
+        ScarpPage scarpPage = new ScarpPage();
+        scarpPage.scrapButton.click();
+        //---------------------------------------\\
+        scarpPage.mangifyingGlassButton.click();
+        SeleniumUtils.pause(3);
+        scarpPage.filterButton.click();
+
+        //------------------------------------------------------------------\\
+        scarpPage.groupByButton.click();
+
+        Assert.assertTrue(scarpPage.productSelection.isDisplayed(),"Product Select is Not Displayed!!");
+        Assert.assertTrue(scarpPage.locationSelection.isDisplayed(),"Location Select is Not Displayed!!");
+        Assert.assertTrue(scarpPage.scrapLocationSelector.isDisplayed(),"Scrap Select is Not Displayed!!");
+        Assert.assertTrue(scarpPage.addCustomGroupSelector.isDisplayed(),"Add Custom Select is Not Displayed");
+        //--------------------------------------------------------------\\
+        scarpPage.favoritesButton.click();
+
+        Assert.assertTrue(scarpPage.saveCurrentSearch.isDisplayed(),"Save Current Search is Not Displayed!!");
+        Assert.assertTrue(scarpPage.addToMyDashboard.isDisplayed(),"Add to my Dashboard is Not Displayed!!");
+        //------------------------------------------------------------\\
+        scarpPage.searchInputField.sendKeys("apple" + Keys.ENTER);
+
+    }
 
 }
 
