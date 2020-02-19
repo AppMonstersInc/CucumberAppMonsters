@@ -34,6 +34,9 @@ public class ProductsPageManager {
     @FindBy(xpath = "//*[@class='btn btn-primary btn-sm o_form_button_save']")
     public WebElement newProductSaveButton;
 
+    @FindBy(xpath = "(//button[@class='btn btn-sm btn-primary'])[1]")
+    public WebElement okButton;
+
     @FindBy(xpath = "//*[@class='oe_kanban_global_click o_kanban_record']")
     public WebElement fakeResult;
 
