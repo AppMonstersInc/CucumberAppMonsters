@@ -218,11 +218,12 @@ public class MainTestManager {
     @Test(priority = 14)
     public void verifySearchFunctionalityOnReorderingRulesPage() {
         reorderingRulesPage.reorderingRulesButton.click();
-        reorderingRulesPage.searchInput.sendKeys("Computer" + Keys.ENTER);
+        reorderingRulesPage.searchInput.sendKeys("computer" + Keys.ENTER);
+        SeleniumUtils.pause(1);
         List<WebElement> list = reorderingRulesPage.firstColumns;
-        boolean result = false;
+        boolean result = true;
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getText().contains("Computer")) {
+            if (list.get(i).getText().toLowerCase().contains("computer")) {
                 result = true;
             }
         }
@@ -324,6 +325,7 @@ public class MainTestManager {
         //    Click to the Products button
         //    Manager sholud be navigated to Products page
         productsPageManager.productsButton.click();
+        SeleniumUtils.pause(1);
         String actualResult = productsPageManager.headerOfProducts.getText();
         String expectedResult = "Products";
         SeleniumUtils.pause(2);
@@ -353,7 +355,7 @@ public class MainTestManager {
     public void validateCreateNewProduct() {
         //    Click to save	Verify that product is added to the products list
         Faker faker = new Faker();
-        String str = faker.company().name();
+        String str = faker.funnyName().name();
         productsPageManager.productsButton.click();
         productsPageManager.createButton.click();
         productsPageManager.productNameInput.sendKeys(str);
@@ -487,37 +489,37 @@ public class MainTestManager {
         productMoves.productMovesButton.click();
         Assert.assertTrue(productMoves.productMovesButton.isDisplayed(), "Product Moves functionality is NOT displayed");
         productMoves.allCheckBoxSelector.click();
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         productMoves.actionButton.click();
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         productMoves.exportButton.click();
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         productMoves.importCompatibleRadioButton.isSelected();
         Assert.assertTrue(productMoves.importCompatibleRadioButton.isEnabled(), "Radio Button is not enabled");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         productMoves.exportFormatsCsvRadioButton.isSelected();
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.exportToFileButton.isDisplayed(), "Export to file Button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         productMoves.addFieldButton.isDisplayed();
         Assert.assertTrue(productMoves.addFieldButton.isDisplayed(), "Add field button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.removeFieldButton.isDisplayed(), "Remove field button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.removeAllFieldButton.isDisplayed(), "Remove all file button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.moveUpButton.isDisplayed(), "Move up button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.moveDownButton.isDisplayed(), "Move down button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.saveFieldsListButton.isDisplayed(), "Save field list button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.exportAllDataRadioButton.isDisplayed(), "Export all data radio button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         Assert.assertTrue(productMoves.excelRadioButton.isDisplayed(), "Excel radio button is not displayed");
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
         productMoves.closeButton.click();
-        SeleniumUtils.pause(3);
+        SeleniumUtils.pause(2);
     }
 
     @Test(priority = 28) //Roman
