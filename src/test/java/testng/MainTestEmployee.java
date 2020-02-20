@@ -1,8 +1,12 @@
 package testng;
 
 
+
 import com.github.javafaker.Faker;
 import org.apache.commons.lang3.builder.ToStringExclude;
+
+import com.google.common.base.Verify;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -10,7 +14,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import pages.*;
+
+import pages.HomePage;
+import pages.InventoryAdjustmentsPage;
+import pages.ProductsPageEmployee;
+import pages.ReorderingRulesPage;
+
 import utilities.BriteUtils;
 import utilities.Driver;
 import utilities.SeleniumUtils;
@@ -22,8 +33,12 @@ public class MainTestEmployee {
     HomePage homePage = new HomePage();
     ReorderingRulesPage reorderingRulesPage = new ReorderingRulesPage();
     InventoryAdjustmentsPage inventoryAdjustmentsPage = new InventoryAdjustmentsPage();
+
     TransferPage transferPage=new TransferPage();
     Faker faker=new Faker();
+
+    ProductsPageEmployee productsPageEmployee = new ProductsPageEmployee();
+
 
     @BeforeClass
     public void login() {
@@ -296,6 +311,113 @@ SeleniumUtils.pause(2);
         Assert.assertTrue(transferPage.newStockForm.isDisplayed(),"New Form did'nt displayed");
 
     }
+
+
+
+    // As an employee I should be able to see Products button inside the Inventory module
+    @Test(priority = 19) //Sultan
+    // Verify Products button is displayed
+    public void productsButtonVerification(){
+        Assert.assertTrue(productsPageEmployee.productsButton.isDisplayed(),"Products button is NOT DISPLAYED");
+    }
+
+    @Test(priority = 20) // Sultan
+    // Verify Products page is opened
+    // Verify list of products items displayed
+    public void verificationOfInsideProductsPage(){
+        productsPageEmployee.productsButton.click();
+        Assert.assertTrue(productsPageEmployee.itemsList.isDisplayed(),"List of items is NOT Displayed");
+    }
+
+    @Test(priority = 21) //Sultan
+    public void searchBoxVerification(){
+        // Verify search box is displayed
+        productsPageEmployee.productsButton.click();
+        Assert.assertTrue(productsPageEmployee.searchBoxInput.isDisplayed(),"Search box input is not displayed");
+    }
+
+    @Test(priority = 22)//Sultan
+    public void searchBoxInputValidation(){
+        // Verify items listed by name as searched
+        productsPageEmployee.productsButton.click();
+        productsPageEmployee.searchBoxInput.sendKeys("book");
+        Assert.assertTrue(productsPageEmployee.searchedItemList.isDisplayed(),"Searched item list is not displayed");
+    }
+
+    @Test(priority = 23) //Sultan
+    public void searchedItemVerification(){
+        // Click to the selected item
+        // Employee should be navigated to selected items page
+        productsPageEmployee.productsButton.click();
+        SeleniumUtils.pause(2);
+        productsPageEmployee.searchBoxInput.sendKeys("book");
+        productsPageEmployee.searchedItemButton.click();
+        Assert.assertTrue(productsPageEmployee.searchedItemForm.isDisplayed(),"Searched item description is NOT displayed");
+    }
+
+
+    @Test(priority = 24)
+    public void Import_Scrap_Products(){
+        ScarpPage scarpPage = new ScarpPage();
+        scarpPage.scrapButton.click();
+        scarpPage.importButton.click();
+        //------------------------------------\\
+        // User should be able to see Test Import Button!
+
+        Assert.assertTrue(scarpPage.testImportButton.isDisplayed(),"Test Import button is Not Displayed!!");
+        //---------------------------------------------\\
+        // User should be able to see The Import Button in 2nd Page!
+
+        Assert.assertTrue(scarpPage.importButton2ndPage.isDisplayed(),"Import button 2nd page is Not Displayed!!");
+        //-----------------------------------------------\\
+        //User should be able to verify, 'Select a CSV or Excel file to import.'
+        Assert.assertTrue(scarpPage.verifyText.isDisplayed(),"Text is Not Displayed!!");
+        //-----------------------------------------------------\\
+        // User should be able to see Reload file!
+        Assert.assertTrue(scarpPage.reloadFileButton.isDisplayed(),"Reload file is Not Displayed!!");
+        //-------------------------------------------------------\\
+        // User should be able to see Load Button!
+        Assert.assertTrue(scarpPage.loadFileButton.isDisplayed(),"Load Button is Not Displayed!!");
+        //------------------------------------------------------------\\
+        // User should be able to see the Input Field!
+        Assert.assertTrue(scarpPage.inputField.isDisplayed(),"Input Field is Not Displayed!!");
+        //-----------------------------------------------------------------\\
+        // User should able to see Help Button!
+        Assert.assertTrue(scarpPage.helpButton.isDisplayed(),"Help Button is Not Displayed!!");
+        //-----------------------------------------------------------------\\
+        // User should be able see Cancel!
+        Assert.assertTrue(scarpPage.CancelButton.isDisplayed(),"Cancel Button is Not Displayed");
+
+        SeleniumUtils.pause(2);
+    }
+
+    @Test(priority = 25)
+    public void ScrapSearchButtonsVerify(){
+        ScarpPage scarpPage = new ScarpPage();
+        scarpPage.scrapButton.click();
+        //---------------------------------------\\
+        scarpPage.mangifyingGlassButton.click();
+        SeleniumUtils.pause(3);
+        scarpPage.filterButton.click();
+
+        //------------------------------------------------------------------\\
+        scarpPage.groupByButton.click();
+
+        Assert.assertTrue(scarpPage.productSelection.isDisplayed(),"Product Select is Not Displayed!!");
+        Assert.assertTrue(scarpPage.locationSelection.isDisplayed(),"Location Select is Not Displayed!!");
+        Assert.assertTrue(scarpPage.scrapLocationSelector.isDisplayed(),"Scrap Select is Not Displayed!!");
+        Assert.assertTrue(scarpPage.addCustomGroupSelector.isDisplayed(),"Add Custom Select is Not Displayed");
+        //--------------------------------------------------------------\\
+        scarpPage.favoritesButton.click();
+
+        Assert.assertTrue(scarpPage.saveCurrentSearch.isDisplayed(),"Save Current Search is Not Displayed!!");
+        Assert.assertTrue(scarpPage.addToMyDashboard.isDisplayed(),"Add to my Dashboard is Not Displayed!!");
+        //------------------------------------------------------------\\
+        scarpPage.searchInputField.sendKeys("apple" + Keys.ENTER);
+
+    }
+
+
 
 
 

@@ -26,11 +26,18 @@ public class InventoryFunctionality_Reporting {
     public WebElement secondRadioButtonText;
     @FindBy(xpath = "//label[@for='o_field_input_34']")
     public WebElement dateText;
-    @FindBy(css = ".o_datepicker_button")
+    @FindBy(xpath = "//span[@class='o_datepicker_button']")
     public WebElement datePickerButton;
-    @FindBy(css = "#o_field_input_34")
+    @FindBy(xpath = "//div[@class='o_datepicker o_field_date o_field_widget']")
     public WebElement calendarBox;
     @FindBy(css = "button[special='cancel']")
     public WebElement cancelButton;
+
+    @FindBy(css = ".close")
+    public WebElement xButton;
+
+    @FindBy(xpath = "//button[.='Ok']")
+    public WebElement okAlertButton;
+
 
 }
