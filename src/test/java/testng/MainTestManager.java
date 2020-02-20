@@ -5,6 +5,9 @@ import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.*;
@@ -12,6 +15,7 @@ import utilities.BriteUtils;
 import utilities.Driver;
 import utilities.SeleniumUtils;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -25,6 +29,11 @@ public class MainTestManager {
     ProductsPageManager productsPageManager = new ProductsPageManager();
     InventoryFunctionality_Reporting inventoryFunctionality_reporting = new InventoryFunctionality_Reporting();
     ProductMoves productMoves = new ProductMoves();
+
+    WarehousesPage warehousesPage = new WarehousesPage();
+    OperationsTypesPage operationsTypesPage = new OperationsTypesPage();
+
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
 
 
     @BeforeClass
@@ -539,6 +548,151 @@ public class MainTestManager {
         Assert.assertTrue(actualTextHeader.contains(expectedTextHeader), "Actual value does not equal to expected value ");
         SeleniumUtils.pause(3);
 
+    }
+
+    @Test (priority = 30)      //Ahmed
+    public void verifyWarehouseManagementButton() {
+
+        Assert.assertTrue(warehousesPage.WarehouseManagementButton.isDisplayed(),
+                "Warehouse Management button is NOT displayed! ");
+        warehousesPage.WarehouseManagementButton.click();
+
+        Assert.assertTrue(warehousesPage.WarehouseButton.isDisplayed(),
+                "Warehouse button is NOT displayed!");
+        // warehousesPage.WarehouseButton.click();
+
+    }
+
+    @Test (priority = 31)  //Ahmed
+    public void verifyWarehouseText() {
+        warehousesPage.WarehouseManagementButton.click();
+        warehousesPage.WarehouseManagementButton.click();
+        warehousesPage.WarehouseButton.click();
+
+        String ActualText = warehousesPage.WarehouseText.getText();
+        String expectedText = "Warehouses";
+        Assert.assertTrue(ActualText.contains(expectedText),
+                "Text is NOT displayed!");
+        Assert.assertTrue(warehousesPage.WarehouseSearchBox.isDisplayed(),
+                "Search box is NOT displayed!");
+    }
+
+
+    @Test (priority = 32)       //Ahmed
+    public void verifyAllButtonsAndTextsAreDisplayed(){
+        // first click to warehouse management button to start from beginning
+        warehousesPage.WarehouseManagementButton.click();
+        SeleniumUtils.pause(2);
+        // click to Operations types button
+        //Assert.assertTrue(operationsTypesPage.OperationsTypesButton , "Operations Types is NOT displayed");
+        warehousesPage.WarehouseManagementButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(operationsTypesPage.OperationsTypesButton));
+        operationsTypesPage.OperationsTypesButton.click();
+
+        // verify All operations text is displayed
+        Assert.assertTrue(operationsTypesPage.allOperationsText.isDisplayed(),
+                "All Operations text is NOT displayed!");
+        // verify create button is displayed
+        Assert.assertTrue(operationsTypesPage.operationsTypesCreateButton.isDisplayed(),
+                "create button is NOT displayed!");
+        // verify import button is displayed
+        Assert.assertTrue(operationsTypesPage.OperationsTypesImportButton.isDisplayed(),
+                "Import button is NOT displayed!");
+        // verify search button
+        Assert.assertTrue(operationsTypesPage.OperationsTypesSearchBox.isDisplayed(),
+                "Search button is NOT displayed!");
+        // verify operations name type text is on the page
+        Assert.assertTrue(operationsTypesPage.operationTypesNameText.isDisplayed(),
+                "Operations name type is NOT displayed!");
+        // verify Warehouse text is displayed
+        Assert.assertTrue(operationsTypesPage.warehouseText.isDisplayed(),
+                "Warehouse text is NOT displayed!");
+        // verify Reference Sequence text is displayed
+        Assert.assertTrue(operationsTypesPage.referenceSequenceTextFromTable.isDisplayed(),
+                "Reference sequence text is NOT displayed!");
+    }
+
+
+    @Test(priority = 33)      //Ahmed
+    public void createButtonFromOperationTypes(){
+
+        Faker faker = new Faker();
+        warehousesPage.WarehouseManagementButton.click();
+        warehousesPage.WarehouseManagementButton.click();
+        // operationsTypesPage.OperationsTypesButton.click();
+        // click to create button
+        wait.until(ExpectedConditions.elementToBeClickable(operationsTypesPage.operationsTypesCreateButton));
+        operationsTypesPage.operationsTypesCreateButton.click();
+        Assert.assertTrue(operationsTypesPage.operationTypesNameText.isDisplayed(),
+                "Operation types name is NOT displayed!");
+        wait.until(ExpectedConditions.elementToBeClickable(operationsTypesPage.OperationTypesNameInputBox));
+        operationsTypesPage.OperationTypesNameInputBox.sendKeys(
+                faker.name().firstName() + Keys.ENTER);
+        Assert.assertTrue(operationsTypesPage.referenceSequenceTextInCreate.isDisplayed(),
+                "reference sequence text is NOT displayed!");
+        operationsTypesPage.ReferenceSequenceInputBox.click();
+        operationsTypesPage.ReferenceSequenceInputBoxItem.click();
+        Assert.assertTrue(operationsTypesPage.typeOfOperationText.isDisplayed(),
+                "Type of operation text is NOT displayed!");
+        operationsTypesPage.TypeOfOperationInputBox.click();
+        Select select = new Select(operationsTypesPage.TypeOfOperationInputBox);
+        select.selectByVisibleText("Internal");
+        operationsTypesPage.TypeOfOperationInputBox.click();
+        Assert.assertTrue(operationsTypesPage.OperationTypeForReturnsText.isDisplayed(),
+                "Return text is NOT displayed!");
+        operationsTypesPage.operationsTypeForReturnBox.sendKeys("Chicago Warehouse" + Keys.ENTER);
+
+        Assert.assertTrue(operationsTypesPage.showDetailedOperationsText.isDisplayed(),
+                "show detailed operations text is NOT displayed!");
+        Assert.assertTrue(operationsTypesPage.showReservedText.isDisplayed(),
+                "show reserved text is NOT displayed!");
+        operationsTypesPage.DiscardButton.click();
+
+    }
+
+    @Test(priority = 34)    //Ahmed
+    public void importPageVerifyFromOperationTypes(){
+
+        wait.until(ExpectedConditions.elementToBeClickable(warehousesPage.WarehouseManagementButton));
+        // warehousesPage.WarehouseManagementButton.click();
+        SeleniumUtils.pause(2);
+        wait.until(ExpectedConditions.elementToBeClickable(operationsTypesPage.OperationsTypesButton));
+
+        //  operationsTypesPage.OperationsTypesButton.click();
+        SeleniumUtils.pause(2);
+        operationsTypesPage.OperationsTypesImportButton.click();
+        SeleniumUtils.pause(2);
+        Assert.assertTrue(operationsTypesPage.importAFileText.isDisplayed(),
+                "Import a file text is NOT displayed!");
+        SeleniumUtils.pause(2);
+        Assert.assertTrue(operationsTypesPage.loadFileButton.isEnabled(),
+                "Load file button is NOT clickable");
+        SeleniumUtils.pause(2);
+        Assert.assertTrue(operationsTypesPage.selectACSVText.isDisplayed(),
+                "CSV text is NOT displayed!");
+        SeleniumUtils.pause(2);
+        String expectedURLfromHelp = "https://www.odoo.com/documentation" +
+                "/user/11.0/general/base_import/import_faq.html";
+        String actualUrlFromHelp = operationsTypesPage.helpButton.getAttribute("href");
+        Assert.assertTrue(actualUrlFromHelp.equals(expectedURLfromHelp),
+                "Help url is NOT matching");
+        SeleniumUtils.pause(2);
+        Assert.assertTrue(operationsTypesPage.helpButton.isEnabled(),
+                "Help button is NOT Clickable!");
+        SeleniumUtils.pause(2);
+        operationsTypesPage.cancelButtonInImportPage.click();
+    }
+
+    @Test(priority = 35)   //Ahmed
+    public void searchButtonVerifyFromWarehouse(){
+        wait.until(ExpectedConditions.elementToBeClickable(warehousesPage.WarehouseManagementButton));
+        // warehousesPage.WarehouseManagementButton.click();
+       // warehousesPage.WarehouseManagementButton.click();
+        SeleniumUtils.pause(3);
+        operationsTypesPage.OperationsTypesButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(operationsTypesPage.searchButton));
+        Assert.assertTrue(operationsTypesPage.searchButton.isEnabled(),
+                "search button is NOT displayed!");
 
     }
 
