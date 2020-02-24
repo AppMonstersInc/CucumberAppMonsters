@@ -224,7 +224,7 @@ public class MainTestManager {
         //Not able to automate,there is a bag
     }
 
-    @Test(priority = 14)
+   // @Test(priority = 14)
     public void verifySearchFunctionalityOnReorderingRulesPage() {
         reorderingRulesPage.reorderingRulesButton.click();
         reorderingRulesPage.searchInput.sendKeys("computer" + Keys.ENTER);
@@ -492,7 +492,7 @@ public class MainTestManager {
 
     }
 
-    @Test(priority = 27)  //Roman
+   // @Test(priority = 27)  //Roman
     public void productMoveButton() {
         // Manager should be able to click on "Product Moves" functionality
         productMoves.productMovesButton.click();
@@ -650,7 +650,7 @@ public class MainTestManager {
 
     }
 
-    @Test(priority = 34)    //Ahmed
+  //  @Test(priority = 34)    //Ahmed
     public void importPageVerifyFromOperationTypes(){
 
         wait.until(ExpectedConditions.elementToBeClickable(warehousesPage.WarehouseManagementButton));
@@ -683,10 +683,10 @@ public class MainTestManager {
         operationsTypesPage.cancelButtonInImportPage.click();
     }
 
-    @Test(priority = 35)   //Ahmed
+   // @Test(priority = 35)   //Ahmed
     public void searchButtonVerifyFromWarehouse(){
-        wait.until(ExpectedConditions.elementToBeClickable(warehousesPage.WarehouseManagementButton));
-        // warehousesPage.WarehouseManagementButton.click();
+       // wait.until(ExpectedConditions.elementToBeClickable(warehousesPage.WarehouseManagementButton));
+       // warehousesPage.WarehouseManagementButton.click();
        // warehousesPage.WarehouseManagementButton.click();
         SeleniumUtils.pause(3);
         operationsTypesPage.OperationsTypesButton.click();

@@ -170,7 +170,7 @@ public class MainTestEmployee {
     }
 
     @Test(priority = 9)    // Jurabek
-    public void inventoryAdjustButton() {
+    public void inventoryAdjustModuleButton() {
         homePage.inventoryModuleTab.click();
         // verify inventory adjustments button
         SeleniumUtils.pause(2);
@@ -180,7 +180,7 @@ public class MainTestEmployee {
         inventoryAdjustmentsPage.inventoryAdjustmentsButton.click();
     }
         @Test (priority =10 )
-                public void createButton(){
+                public void inventoryAdjustCreateButton(){
         // inside inventory adjsutments module create button is displayed
         Assert.assertTrue(inventoryAdjustmentsPage.createButtonVerify.isDisplayed(),
                 "Create button is NOT displayed!!!");
