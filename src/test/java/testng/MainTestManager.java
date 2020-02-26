@@ -650,7 +650,7 @@ public class MainTestManager {
 
     }
 
-  //  @Test(priority = 34)    //Ahmed
+    @Test(priority = 34)    //Ahmed
     public void importPageVerifyFromOperationTypes(){
 
         wait.until(ExpectedConditions.elementToBeClickable(warehousesPage.WarehouseManagementButton));
@@ -683,7 +683,7 @@ public class MainTestManager {
         operationsTypesPage.cancelButtonInImportPage.click();
     }
 
-   // @Test(priority = 35)   //Ahmed
+    @Test(priority = 35)   //Ahmed
     public void searchButtonVerifyFromWarehouse(){
        // wait.until(ExpectedConditions.elementToBeClickable(warehousesPage.WarehouseManagementButton));
        // warehousesPage.WarehouseManagementButton.click();

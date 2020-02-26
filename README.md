@@ -1,5 +1,5 @@
 # App_Monster_Inventory_BRITE
-In this frame work we use 
+In this framework we use 
 
 SELENIUM => is a collection of jar files. The jar files have Classes. And these classes have ready to use methods. 
 
