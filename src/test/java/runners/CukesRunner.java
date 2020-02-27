@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         plugin = "html:target/cucumber-reports",
         features = "src/test/resources/features/",
         glue = "step_definitions",
-        dryRun = false,
-        tags = "@SmokeManager"
+        dryRun = true,
+        tags = "@SmokeEmployee"
 )
 public class CukesRunner {
 
