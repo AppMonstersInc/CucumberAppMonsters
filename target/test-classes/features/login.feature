@@ -12,4 +12,4 @@ Feature: As a Employee user should login
       Then Click to inventory Module button
 #  @SmokeEmployee  @SmokeManager
 #    Scenario: Close all windows after test
-#      Then Close all windows
+#      Then Close all windows logged in
