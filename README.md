@@ -1,4 +1,7 @@
 # App_Monster_Inventory_BRITE
+CucumberJunitFrameWork
+
+
 In this framework we use 
 
 SELENIUM => is a collection of jar files. The jar files have Classes. And these classes have ready to use methods. 
@@ -7,10 +10,8 @@ SELENIUM => is a collection of jar files. The jar files have Classes. And these 
 	1- First way of downloading Selenium is from SeleniumHQ (official website of Selenium)
 	2- Second way is to create a maven project, and add dependencies(jar files) into the project. Maven will the download files for us.
 
-What is TestNG?
-- TestNG is a unit testing framework.
-
 Use Java programming language
+Gerkin language
 
 == Install
 
@@ -29,6 +30,9 @@ Selenium
 Bonigarcia 
 Maven tool
 TestNG
+JUnit
+Cucumber
+
 
 
 === configuration.properties
