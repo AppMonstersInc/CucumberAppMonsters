@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="17" time="162.370052">
-    <testcase classname="As a Employee user should login" name="Login as Employee" time="5.179254">
+<testsuite failures="2" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="16" time="214.277852">
+    <testcase classname="As a Employee user should login" name="Login as Manager" time="5.174905">
         <system-out>
-            <![CDATA[Then As a employee i log get in  to BRITE ERP...............................passed
+            <![CDATA[Then As a manager i log get in  to BRITE ERP................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Employee user should login" name="Verify home page BRITE ERP" time="2.166027">
+    <testcase classname="As a Employee user should login" name="Verify home page BRITE ERP" time="7.16372">
         <system-out>
             <![CDATA[Given As a a employee|manager i am on Home page.............................passed
 And I verify if inventory Module Tab is displayed...........................passed
@@ -14,30 +14,64 @@ Then Click to inventory Module button.......................................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Products module validation as an employee" name="As an employee I should be able to see Products button inside the Inventory module and when I click to products" time="3.17949">
-        <system-out>
-            <![CDATA[And Click to inventory Module button........................................passed
-And I Verify Products button is displayed...................................passed
-And I click to products button..............................................passed
-Then I should be navigated to the products page.............................passed
+    <testcase classname="As a manager I should be able to create product inside products page" name="Manager should be able to click to Products button" time="5.814715">
+        <failure message="java.lang.AssertionError: Products button is NOT displayed!!! Failed!&#10;&#9;at org.junit.Assert.fail(Assert.java:88)&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:41)&#10;&#9;at step_definitions.products_manager_step_defs.poducts_manager_step_defs.verify_Products_button_is_displayed(poducts_manager_step_defs.java:19)&#10;&#9;at ✽.Verify Products button is displayed(src/test/resources/features/productsManager.feature:6)&#10;">
+            <![CDATA[Given Click to inventory Module button......................................passed
+And Verify Products button is displayed.....................................failed
+And Manager clicks on products button.......................................skipped
+Then Manager should be navigated to Products page...........................skipped
+
+StackTrace:
+java.lang.AssertionError: Products button is NOT displayed!!! Failed!
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at step_definitions.products_manager_step_defs.poducts_manager_step_defs.verify_Products_button_is_displayed(poducts_manager_step_defs.java:19)
+	at ✽.Verify Products button is displayed(src/test/resources/features/productsManager.feature:6)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="Products module validation as an employee" name="As an employee I should be able to search Items from the products page" time="13.609062">
-        <system-out>
-            <![CDATA[And Click to inventory Module button........................................passed
-And I click to products button..............................................passed
-And I verify products page is opened........................................passed
-And I verify list of products items displayed...............................passed
-And I verify search box is displayed........................................passed
-When I search for an item...................................................passed
-And I verify items listed by name as searched...............................passed
-When I click to the selected item...........................................passed
-And I should be navigated to selected items page............................passed
+    <testcase classname="As a manager I should be able to create product inside products page" name="Manager should be able to create product" time="10.55474">
+        <failure message="org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']&quot;}&#10;  (Session info: chrome=80.0.3987.122)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Elenas-MacBook-Pro.local', ip: '2603:300a:16aa:1000:0:0:0:cc66%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '12.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/7m/9dch1pys7vx...}, goog:chromeOptions: {debuggerAddress: localhost:50101}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: 602a816bdeeff299d434bca125c135a6&#10;*** Element info: {Using=xpath, value=//button[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']}&#10;&#9;at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#10;&#9;at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)&#10;&#9;at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)&#10;&#9;at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)&#10;&#9;at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)&#10;&#9;at org.openqa.selenium.By$ByXPath.findElement(By.java:353)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)&#10;&#9;at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)&#10;&#9;at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)&#10;&#9;at step_definitions.products_manager_step_defs.poducts_manager_step_defs.verify_create_button_is_displayed(poducts_manager_step_defs.java:40)&#10;&#9;at ✽.Verify create button is displayed(src/test/resources/features/productsManager.feature:12)&#10;">
+            <![CDATA[Given Click to inventory Module button......................................passed
+And Verify create button is displayed.......................................failed
+And Click on the create button..............................................skipped
+And Fill out the form.......................................................skipped
+Then Verify new product is added to the list................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']"}
+  (Session info: chrome=80.0.3987.122)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Elenas-MacBook-Pro.local', ip: '2603:300a:16aa:1000:0:0:0:cc66%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '12.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/7m/9dch1pys7vx...}, goog:chromeOptions: {debuggerAddress: localhost:50101}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 602a816bdeeff299d434bca125c135a6
+*** Element info: {Using=xpath, value=//button[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)
+	at step_definitions.products_manager_step_defs.poducts_manager_step_defs.verify_create_button_is_displayed(poducts_manager_step_defs.java:40)
+	at ✽.Verify create button is displayed(src/test/resources/features/productsManager.feature:12)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering RulesButton is displayed" time="7.16528">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering RulesButton is displayed" time="7.541195">
         <system-out>
             <![CDATA[Given Manager|Employee on inventory module page.............................passed
 And Verify reordering rules is displayed....................................passed
@@ -45,49 +79,49 @@ Then Manager|Employee click to reordering rules button......................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Window" time="7.055148">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Window" time="2.54154">
         <system-out>
             <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
 Then Verify Reordering Rules title is displayed.............................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify the reordering Rules page have select columns with" time="5.276687">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify the reordering Rules page have select columns with" time="2.706618">
         <system-out>
             <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
 Then Verify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;.passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Checkboxes Does Not Selected" time="18.760207">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Checkboxes Does Not Selected" time="18.668158">
         <system-out>
             <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
 Then Verify reordering rules check boxes is enabled.........................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The Reordering Rules Header" time="19.853247">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The Reordering Rules Header" time="19.724796">
         <system-out>
             <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
 Then Verify reordering rules headers........................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The ProductName in Reordering Rules" time="10.485196">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The ProductName in Reordering Rules" time="10.415789">
         <system-out>
             <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
 Then Verify The ProductName in Reordering Rules.............................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Table Is Displayed" time="7.366612">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Table Is Displayed" time="7.153974">
         <system-out>
             <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
 Then Verify Reordering Rules Table Is Displayed.............................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Search Functionality On Reordering RulesPage" time="17.398544">
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Search Functionality On Reordering RulesPage" time="7.939512">
         <system-out>
             <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
 And Click to search box.....................................................passed
@@ -95,41 +129,33 @@ Then Verify Search Functionality On Reordering RulesPage....................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Verification of Transfer button" time="7.207293">
+    <testcase classname="Inventory configuration" name="As a Manager I should be able to use Inventory Configuration in the home page" time="2.361284">
         <system-out>
-            <![CDATA[And the user clicks the transfer button.....................................passed
-Then the user should be able to see all stocks..............................passed
+            <![CDATA[Given Manager|Employee on inventory module page.............................passed
+And As a Manager should be able to see the Warehouse Management.............passed
+Then As a  manager should be able to click the Warehouse Management button..passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Validation of create button on Transfer page" time="12.847772">
+    <testcase classname="Inventory configuration" name="Verifying warehouse button" time="18.130107">
         <system-out>
-            <![CDATA[And the user clicks the transfer button.....................................passed
-And the user clicks create button...........................................passed
-Then the new stock form should be open......................................passed
+            <![CDATA[Given Manager|Employee on inventory module page.............................passed
+And As a manager should be able to click the Wearhouse button and be navigate to the Wearhouse page.passed
+Then As manager should be able to see the search box........................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Validation of search button on Transfer page" time="7.140337">
+    <testcase classname="Inventory configuration" name="Verify Operation types" time="88.296519">
         <system-out>
-            <![CDATA[And the user clicks the transfer button.....................................passed
-When the user click search button...........................................passed
-And the user should be able to write and click the search box button........passed
+            <![CDATA[Given Manager|Employee on inventory module page.............................passed
+And As a manager should be able to click the Operations types button and be navigate to the Operations types page.passed
+And As a manager i should be able to create.................................passed
+And As manager i should be able to click the import button..................passed
+Then As a manager i should be able to click the search box..................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Verification of delete button on Transfer Page" time="17.588246">
-        <system-out>
-            <![CDATA[And the user clicks the transfer button.....................................passed
-When the user chooses any item..............................................passed
-Then action button should displayed.........................................passed
-When the user clicks the action button......................................passed
-And the user should be able to see the export and delete modules button.....passed
-Then the user should be able to click the delete button.....................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="close driver" name="Close all windows after test" time="0.09165">
+    <testcase classname="close driver" name="Close all windows after test" time="0.09028">
         <system-out>
             <![CDATA[Then Close all windows logged in............................................passed
 ]]>
