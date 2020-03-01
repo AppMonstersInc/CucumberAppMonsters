@@ -10,6 +10,3 @@ Feature: As a Employee user should login
      Given As a a employee|manager i am on Home page
       And I verify if inventory Module Tab is displayed
       Then Click to inventory Module button
-#  @SmokeEmployee  @SmokeManager
-#    Scenario: Close all windows after test
-#      Then Close all windows logged in
