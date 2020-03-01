@@ -1,0 +1,172 @@
+Feature: As a Employee user should login
+
+  @SmokeEmployee
+  Scenario: Login as Employee                     [90m# src/test/resources/features/login.feature:3[0m
+    [32mThen [0m[32mAs a employee i log get in  to BRITE ERP[0m [90m# login_steps.as_a_employee_i_log_get_in_to_BRITE_ERP()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify home page BRITE ERP                [90m# src/test/resources/features/login.feature:9[0m
+    [32mGiven [0m[32mAs a a employee|manager i am on Home page[0m   [90m# login_steps.as_a_a_employee_manager_i_am_on_Home_page()[0m
+    [32mAnd [0m[32mI verify if inventory Module Tab is displayed[0m [90m# login_steps.i_verify_if_inventory_Module_Tab_is_displayed()[0m
+    [32mThen [0m[32mClick to inventory Module button[0m             [90m# login_steps.click_to_inventory_Module_button()[0m
+
+Feature: As a Manager|Employee i should able to use reordering rules functionality
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Reordering RulesButton is displayed     [90m# src/test/resources/features/reorderingRules.feature:4[0m
+    [32mGiven [0m[32mManager|Employee on inventory module page[0m        [90m# ReorderingRules_steps.manager_Employee_on_inventory_module_page()[0m
+    [32mAnd [0m[32mVerify reordering rules is displayed[0m               [90m# ReorderingRules_steps.verify_reordering_rules_is_displayed()[0m
+    [32mThen [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Reordering Rules Window                  [90m# src/test/resources/features/reorderingRules.feature:10[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify Reordering Rules title is displayed[0m         [90m# ReorderingRules_steps.verify_Reordering_Rules_title_is_displayed()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify the reordering Rules page have select columns with                                       [90m# src/test/resources/features/reorderingRules.feature:15[0m
+  Name;Product;Minimum Quantity;Maximum Quantity;
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m                                                 [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;[0m [90m# ReorderingRules_steps.verify_reordering_rules_page_contains_columns_with_Name_Product_Minimum_Quantity_Maximum_Quantity()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Checkboxes Does Not Selected             [90m# src/test/resources/features/reorderingRules.feature:21[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify reordering rules check boxes is enabled[0m     [90m# ReorderingRules_steps.verify_reordering_rules_check_boxes_is_enabled()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Validate The Reordering Rules Header            [90m# src/test/resources/features/reorderingRules.feature:26[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [31mThen [0m[31mVerify reordering rules headers[0m                    [90m# ReorderingRules_steps.verify_reordering_rules_headers()[0m
+      [31morg.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <td class="o_data_cell o_readonly_modifier o_required_modifier">...</td> is not clickable at point (344, 167). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1100; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;"></div>
+  (Session info: chrome=80.0.3987.122)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Elenas-MacBook-Pro.local', ip: '2603:300a:16aa:1000:0:0:0:cc66%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '12.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/7m/9dch1pys7vx...}, goog:chromeOptions: {debuggerAddress: localhost:59071}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 928c0b1bcdd5e7b2d827eb8b83b36b94
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy15.click(Unknown Source)
+	at step_definitions.reorderingRules_steps.ReorderingRules_steps.verify_reordering_rules_headers(ReorderingRules_steps.java:78)
+	at ✽.Verify reordering rules headers(src/test/resources/features/reorderingRules.feature:28)
+[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Validate The ProductName in Reordering Rules    [90m# src/test/resources/features/reorderingRules.feature:31[0m
+    [31mGiven [0m[31mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+      [31morg.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="oe_menu_text">...</span> is not clickable at point (71, 445). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1100; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;"></div>
+  (Session info: chrome=80.0.3987.122)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Elenas-MacBook-Pro.local', ip: '2603:300a:16aa:1000:0:0:0:cc66%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '12.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/7m/9dch1pys7vx...}, goog:chromeOptions: {debuggerAddress: localhost:59071}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 928c0b1bcdd5e7b2d827eb8b83b36b94
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy15.click(Unknown Source)
+	at step_definitions.reorderingRules_steps.ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button(ReorderingRules_steps.java:31)
+	at ✽.Manager|Employee click to reordering rules button(src/test/resources/features/reorderingRules.feature:32)
+[0m
+    [36mThen [0m[36mVerify The ProductName in Reordering Rules[0m         [90m# ReorderingRules_steps.verify_The_ProductName_in_Reordering_Rules()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Reordering Rules Table Is Displayed      [90m# src/test/resources/features/reorderingRules.feature:36[0m
+    [31mGiven [0m[31mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+      [31morg.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="oe_menu_text">...</span> is not clickable at point (71, 445). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1100; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;"></div>
+  (Session info: chrome=80.0.3987.122)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Elenas-MacBook-Pro.local', ip: '2603:300a:16aa:1000:0:0:0:cc66%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '12.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/7m/9dch1pys7vx...}, goog:chromeOptions: {debuggerAddress: localhost:59071}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 928c0b1bcdd5e7b2d827eb8b83b36b94
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy15.click(Unknown Source)
+	at step_definitions.reorderingRules_steps.ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button(ReorderingRules_steps.java:31)
+	at ✽.Manager|Employee click to reordering rules button(src/test/resources/features/reorderingRules.feature:37)
+[0m
+    [36mThen [0m[36mVerify Reordering Rules Table Is Displayed[0m         [90m# ReorderingRules_steps.verify_Reordering_Rules_Table_Is_Displayed()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Search Functionality On Reordering RulesPage [90m# src/test/resources/features/reorderingRules.feature:41[0m
+    [31mGiven [0m[31mManager|Employee click to reordering rules button[0m     [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+      [31morg.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="oe_menu_text">...</span> is not clickable at point (71, 445). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1100; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;"></div>
+  (Session info: chrome=80.0.3987.122)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Elenas-MacBook-Pro.local', ip: '2603:300a:16aa:1000:0:0:0:cc66%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '12.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/7m/9dch1pys7vx...}, goog:chromeOptions: {debuggerAddress: localhost:59071}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 928c0b1bcdd5e7b2d827eb8b83b36b94
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy15.click(Unknown Source)
+	at step_definitions.reorderingRules_steps.ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button(ReorderingRules_steps.java:31)
+	at ✽.Manager|Employee click to reordering rules button(src/test/resources/features/reorderingRules.feature:42)
+[0m
+    [36mAnd [0m[36mClick to search box[0m                                     [90m# ReorderingRules_steps.click_to_search_box()[0m
+    [36mThen [0m[36mVerify Search Functionality On Reordering RulesPage[0m    [90m# ReorderingRules_steps.verify_Search_Functionality_On_Reordering_RulesPage()[0m

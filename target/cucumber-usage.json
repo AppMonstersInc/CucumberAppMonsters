@@ -1,0 +1,300 @@
+[
+  {
+    "source": "Verify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;",
+    "steps": [
+      {
+        "name": "Verify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;",
+        "aggregatedDurations": {
+          "average": 0.066961934,
+          "median": 0.066961934
+        },
+        "durations": [
+          {
+            "duration": 0.066961934,
+            "location": "src/test/resources/features/reorderingRules.feature:18"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Verify reordering rules check boxes is enabled",
+    "steps": [
+      {
+        "name": "Verify reordering rules check boxes is enabled",
+        "aggregatedDurations": {
+          "average": 18.621588577,
+          "median": 18.621588577
+        },
+        "durations": [
+          {
+            "duration": 18.621588577,
+            "location": "src/test/resources/features/reorderingRules.feature:23"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Verify Search Functionality On Reordering RulesPage",
+    "steps": [
+      {
+        "name": "Verify Search Functionality On Reordering RulesPage",
+        "aggregatedDurations": {
+          "average": 2.613199352,
+          "median": 2.613199352
+        },
+        "durations": [
+          {
+            "duration": 2.613199352,
+            "location": "src/test/resources/features/reorderingRules.feature:44"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Manager|Employee click to reordering rules button",
+    "steps": [
+      {
+        "name": "Manager|Employee click to reordering rules button",
+        "aggregatedDurations": {
+          "average": 0.053899499,
+          "median": 0.054627284
+        },
+        "durations": [
+          {
+            "duration": 0.057868016,
+            "location": "src/test/resources/features/reorderingRules.feature:7"
+          },
+          {
+            "duration": 0.043190299,
+            "location": "src/test/resources/features/reorderingRules.feature:11"
+          },
+          {
+            "duration": 0.058501659,
+            "location": "src/test/resources/features/reorderingRules.feature:17"
+          },
+          {
+            "duration": 0.022866252,
+            "location": "src/test/resources/features/reorderingRules.feature:22"
+          },
+          {
+            "duration": 0.051386552,
+            "location": "src/test/resources/features/reorderingRules.feature:27"
+          },
+          {
+            "duration": 0.100933675,
+            "location": "src/test/resources/features/reorderingRules.feature:32"
+          },
+          {
+            "duration": 0.038259195,
+            "location": "src/test/resources/features/reorderingRules.feature:37"
+          },
+          {
+            "duration": 0.058190346,
+            "location": "src/test/resources/features/reorderingRules.feature:42"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Verify Reordering Rules Table Is Displayed",
+    "steps": [
+      {
+        "name": "Verify Reordering Rules Table Is Displayed",
+        "aggregatedDurations": {
+          "average": 2.01549631,
+          "median": 2.01549631
+        },
+        "durations": [
+          {
+            "duration": 2.01549631,
+            "location": "src/test/resources/features/reorderingRules.feature:38"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "I verify if inventory Module Tab is displayed",
+    "steps": [
+      {
+        "name": "I verify if inventory Module Tab is displayed",
+        "aggregatedDurations": {
+          "average": 0.057861799,
+          "median": 0.057861799
+        },
+        "durations": [
+          {
+            "duration": 0.057861799,
+            "location": "src/test/resources/features/login.feature:11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Verify Reordering Rules title is displayed",
+    "steps": [
+      {
+        "name": "Verify Reordering Rules title is displayed",
+        "aggregatedDurations": {
+          "average": 2.009669035,
+          "median": 2.009669035
+        },
+        "durations": [
+          {
+            "duration": 2.009669035,
+            "location": "src/test/resources/features/reorderingRules.feature:12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "As a manager i log get in  to BRITE ERP",
+    "steps": [
+      {
+        "name": "As a manager i log get in  to BRITE ERP",
+        "aggregatedDurations": {
+          "average": 7.122287997,
+          "median": 7.122287997
+        },
+        "durations": [
+          {
+            "duration": 7.122287997,
+            "location": "src/test/resources/features/login.feature:7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Manager|Employee on inventory module page",
+    "steps": [
+      {
+        "name": "Manager|Employee on inventory module page",
+        "aggregatedDurations": {
+          "average": 2.009115593,
+          "median": 2.009115593
+        },
+        "durations": [
+          {
+            "duration": 2.009115593,
+            "location": "src/test/resources/features/reorderingRules.feature:5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Click to search box",
+    "steps": [
+      {
+        "name": "Click to search box",
+        "aggregatedDurations": {
+          "average": 0.021838123,
+          "median": 0.021838123
+        },
+        "durations": [
+          {
+            "duration": 0.021838123,
+            "location": "src/test/resources/features/reorderingRules.feature:43"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Verify reordering rules headers",
+    "steps": [
+      {
+        "name": "Verify reordering rules headers",
+        "aggregatedDurations": {
+          "average": 4.389299828,
+          "median": 4.389299828
+        },
+        "durations": [
+          {
+            "duration": 4.389299828,
+            "location": "src/test/resources/features/reorderingRules.feature:28"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Click to inventory Module button",
+    "steps": [
+      {
+        "name": "Click to inventory Module button",
+        "aggregatedDurations": {
+          "average": 0.054413881,
+          "median": 0.054413881
+        },
+        "durations": [
+          {
+            "duration": 0.054413881,
+            "location": "src/test/resources/features/login.feature:12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "As a a employee|manager i am on Home page",
+    "steps": [
+      {
+        "name": "As a a employee|manager i am on Home page",
+        "aggregatedDurations": {
+          "average": 2.002987656,
+          "median": 2.002987656
+        },
+        "durations": [
+          {
+            "duration": 2.002987656,
+            "location": "src/test/resources/features/login.feature:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Verify reordering rules is displayed",
+    "steps": [
+      {
+        "name": "Verify reordering rules is displayed",
+        "aggregatedDurations": {
+          "average": 0.024725574,
+          "median": 0.024725574
+        },
+        "durations": [
+          {
+            "duration": 0.024725574,
+            "location": "src/test/resources/features/reorderingRules.feature:6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Verify The ProductName in Reordering Rules",
+    "steps": [
+      {
+        "name": "Verify The ProductName in Reordering Rules",
+        "aggregatedDurations": {
+          "average": 0.208502461,
+          "median": 0.208502461
+        },
+        "durations": [
+          {
+            "duration": 0.208502461,
+            "location": "src/test/resources/features/reorderingRules.feature:33"
+          }
+        ]
+      }
+    ]
+  }
+]
