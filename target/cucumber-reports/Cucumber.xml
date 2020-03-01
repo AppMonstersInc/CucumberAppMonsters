@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="17" time="162.370052">
+    <testcase classname="As a Employee user should login" name="Login as Employee" time="5.179254">
+        <system-out>
+            <![CDATA[Then As a employee i log get in  to BRITE ERP...............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Employee user should login" name="Verify home page BRITE ERP" time="2.166027">
+        <system-out>
+            <![CDATA[Given As a a employee|manager i am on Home page.............................passed
+And I verify if inventory Module Tab is displayed...........................passed
+Then Click to inventory Module button.......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Products module validation as an employee" name="As an employee I should be able to see Products button inside the Inventory module and when I click to products" time="3.17949">
+        <system-out>
+            <![CDATA[And Click to inventory Module button........................................passed
+And I Verify Products button is displayed...................................passed
+And I click to products button..............................................passed
+Then I should be navigated to the products page.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Products module validation as an employee" name="As an employee I should be able to search Items from the products page" time="13.609062">
+        <system-out>
+            <![CDATA[And Click to inventory Module button........................................passed
+And I click to products button..............................................passed
+And I verify products page is opened........................................passed
+And I verify list of products items displayed...............................passed
+And I verify search box is displayed........................................passed
+When I search for an item...................................................passed
+And I verify items listed by name as searched...............................passed
+When I click to the selected item...........................................passed
+And I should be navigated to selected items page............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering RulesButton is displayed" time="7.16528">
+        <system-out>
+            <![CDATA[Given Manager|Employee on inventory module page.............................passed
+And Verify reordering rules is displayed....................................passed
+Then Manager|Employee click to reordering rules button......................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Window" time="7.055148">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify Reordering Rules title is displayed.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify the reordering Rules page have select columns with" time="5.276687">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Checkboxes Does Not Selected" time="18.760207">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify reordering rules check boxes is enabled.........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The Reordering Rules Header" time="19.853247">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify reordering rules headers........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The ProductName in Reordering Rules" time="10.485196">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify The ProductName in Reordering Rules.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Table Is Displayed" time="7.366612">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify Reordering Rules Table Is Displayed.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Search Functionality On Reordering RulesPage" time="17.398544">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+And Click to search box.....................................................passed
+Then Verify Search Functionality On Reordering RulesPage....................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Verification of Transfer button" time="7.207293">
+        <system-out>
+            <![CDATA[And the user clicks the transfer button.....................................passed
+Then the user should be able to see all stocks..............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Validation of create button on Transfer page" time="12.847772">
+        <system-out>
+            <![CDATA[And the user clicks the transfer button.....................................passed
+And the user clicks create button...........................................passed
+Then the new stock form should be open......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Validation of search button on Transfer page" time="7.140337">
+        <system-out>
+            <![CDATA[And the user clicks the transfer button.....................................passed
+When the user click search button...........................................passed
+And the user should be able to write and click the search box button........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a user I should be able to click transfers button to use transfers functionalities." name="Verification of delete button on Transfer Page" time="17.588246">
+        <system-out>
+            <![CDATA[And the user clicks the transfer button.....................................passed
+When the user chooses any item..............................................passed
+Then action button should displayed.........................................passed
+When the user clicks the action button......................................passed
+And the user should be able to see the export and delete modules button.....passed
+Then the user should be able to click the delete button.....................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="close driver" name="Close all windows after test" time="0.09165">
+        <system-out>
+            <![CDATA[Then Close all windows logged in............................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

@@ -5,12 +5,12 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Login as Manager",
+  "name": "Login as Employee",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@SmokeManager"
+      "name": "@SmokeEmployee"
     }
   ]
 });
@@ -18,11 +18,11 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "As a manager i log get in  to BRITE ERP",
+  "name": "As a employee i log get in  to BRITE ERP",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "login_steps.as_a_manager_i_log_get_in_to_BRITE_ERP()"
+  "location": "login_steps.as_a_employee_i_log_get_in_to_BRITE_ERP()"
 });
 formatter.result({
   "status": "passed"
@@ -79,24 +79,24 @@ formatter.result({
 formatter.after({
   "status": "passed"
 });
-formatter.uri("src/test/resources/features/productsManager.feature");
+formatter.uri("src/test/resources/features/productsEmployee.feature");
 formatter.feature({
-  "name": "As a manager I should be able to create product inside products page",
+  "name": "Products module validation as an employee",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@SmokeManager"
+      "name": "@SmokeEmployee"
     }
   ]
 });
 formatter.scenario({
-  "name": "Manager should be able to click to Products button",
-  "description": "",
+  "name": "As an employee I should be able to see Products button inside the Inventory module and when I click to products",
+  "description": "  button I should be navigated to Products page",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@SmokeManager"
+      "name": "@SmokeEmployee"
     }
   ]
 });
@@ -105,7 +105,7 @@ formatter.before({
 });
 formatter.step({
   "name": "Click to inventory Module button",
-  "keyword": "Given "
+  "keyword": "And "
 });
 formatter.match({
   "location": "login_steps.click_to_inventory_Module_button()"
@@ -114,31 +114,31 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify Products button is displayed",
+  "name": "I Verify Products button is displayed",
   "keyword": "And "
 });
 formatter.match({
-  "location": "poducts_manager_step_defs.verify_Products_button_is_displayed()"
+  "location": "Products_employee_step_defs.i_Verify_Products_button_is_displayed()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Manager clicks on products button",
+  "name": "I click to products button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "poducts_manager_step_defs.manager_clicks_on_products_button()"
+  "location": "Products_employee_step_defs.i_click_to_products_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Manager should be navigated to Products page",
+  "name": "I should be navigated to the products page",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "poducts_manager_step_defs.manager_should_be_navigated_to_Products_page()"
+  "location": "Products_employee_step_defs.i_should_be_navigated_to_the_products_page()"
 });
 formatter.result({
   "status": "passed"
@@ -147,12 +147,12 @@ formatter.after({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Manager should be able to create product",
+  "name": "As an employee I should be able to search Items from the products page",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@SmokeManager"
+      "name": "@SmokeEmployee"
     }
   ]
 });
@@ -161,7 +161,7 @@ formatter.before({
 });
 formatter.step({
   "name": "Click to inventory Module button",
-  "keyword": "Given "
+  "keyword": "And "
 });
 formatter.match({
   "location": "login_steps.click_to_inventory_Module_button()"
@@ -170,47 +170,85 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify create button is displayed",
+  "name": "I click to products button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "poducts_manager_step_defs.verify_create_button_is_displayed()"
+  "location": "Products_employee_step_defs.i_click_to_products_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the create button",
+  "name": "I verify products page is opened",
   "keyword": "And "
 });
 formatter.match({
-  "location": "poducts_manager_step_defs.click_on_the_create_button()"
+  "location": "Products_employee_step_defs.i_verify_products_page_is_opened()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Fill out the form",
+  "name": "I verify list of products items displayed",
   "keyword": "And "
 });
 formatter.match({
-  "location": "poducts_manager_step_defs.fill_out_the_form()"
+  "location": "Products_employee_step_defs.i_verify_list_of_products_items_displayed()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify new product is added to the list",
-  "keyword": "Then "
+  "name": "I verify search box is displayed",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "poducts_manager_step_defs.verify_new_product_is_added_to_the_list()"
+  "location": "Products_employee_step_defs.i_verify_search_box_is_displayed()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d80.0.3987.122)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Sultans-MacBook-Pro.local\u0027, ip: \u00272603:300a:16aa:1000:0:0:0:ec6b%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.3\u0027, java.version: \u002712.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/ym/xqx4z39n037...}, goog:chromeOptions: {debuggerAddress: localhost:64084}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 64626be60e341bb7b082187329938432\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat step_definitions.products_manager_step_defs.poducts_manager_step_defs.verify_new_product_is_added_to_the_list(poducts_manager_step_defs.java:68)\n\tat ✽.Verify new product is added to the list(src/test/resources/features/productsManager.feature:15)\n",
-  "status": "failed"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png");
+formatter.step({
+  "name": "I search for an item",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "Products_employee_step_defs.i_search_for_an_item()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I verify items listed by name as searched",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Products_employee_step_defs.i_verify_items_listed_by_name_as_searched()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I click to the selected item",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "Products_employee_step_defs.i_click_to_the_selected_item()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should be navigated to selected items page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Products_employee_step_defs.i_should_be_navigated_to_selected_items_page()"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.after({
   "status": "passed"
 });
@@ -545,6 +583,276 @@ formatter.step({
 });
 formatter.match({
   "location": "ReorderingRules_steps.verify_Search_Functionality_On_Reordering_RulesPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.uri("src/test/resources/features/transfers.feature");
+formatter.feature({
+  "name": "As a user I should be able to click transfers button to use transfers functionalities.",
+  "description": "",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    }
+  ]
+});
+formatter.background({
+  "name": "",
+  "description": "   // When As a employee i log get in  to BRITE ERP\n  //  And As a a employee|manager i am on Home page\n  //  And I verify if inventory Module Tab is displayed\n //   And Click to inventory Module button",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user clicks the transfer button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_clicks_the_transfer_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verification of Transfer button",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    }
+  ]
+});
+formatter.step({
+  "name": "the user should be able to see all stocks.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_should_be_able_to_see_all_stocks()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
+  "description": "   // When As a employee i log get in  to BRITE ERP\n  //  And As a a employee|manager i am on Home page\n  //  And I verify if inventory Module Tab is displayed\n //   And Click to inventory Module button",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user clicks the transfer button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_clicks_the_transfer_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Validation of create button on Transfer page",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    }
+  ]
+});
+formatter.step({
+  "name": "the user clicks create button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_clicks_create_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the new stock form should be open.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Transfers_steps.theNewStockFormShouldBeOpen()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
+  "description": "   // When As a employee i log get in  to BRITE ERP\n  //  And As a a employee|manager i am on Home page\n  //  And I verify if inventory Module Tab is displayed\n //   And Click to inventory Module button",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user clicks the transfer button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_clicks_the_transfer_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Validation of search button on Transfer page",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    }
+  ]
+});
+formatter.step({
+  "name": "the user click search button.",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_click_search_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user should be able to write and click the search box button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_should_be_able_to_write_and_click_the_search_box_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
+  "description": "   // When As a employee i log get in  to BRITE ERP\n  //  And As a a employee|manager i am on Home page\n  //  And I verify if inventory Module Tab is displayed\n //   And Click to inventory Module button",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user clicks the transfer button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_clicks_the_transfer_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verification of delete button on Transfer Page",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    }
+  ]
+});
+formatter.step({
+  "name": "the user chooses any item.",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_chooses_any_item()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "action button should displayed.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Transfers_steps.action_button_should_displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user clicks the action button.",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_clicks_the_action_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user should be able to see the export and delete modules button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_should_be_able_to_see_the_export_and_delete_modules_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user should be able to click the delete button.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Transfers_steps.the_user_should_be_able_to_click_the_delete_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.uri("src/test/resources/features/zCloseDriver.feature");
+formatter.feature({
+  "name": "close driver",
+  "description": "",
+  "keyword": "Feature"
+});
+formatter.scenario({
+  "name": "Close all windows after test",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    },
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Close all windows logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "CloseDriver.close_all_windows_logged_in()"
 });
 formatter.result({
   "status": "passed"
