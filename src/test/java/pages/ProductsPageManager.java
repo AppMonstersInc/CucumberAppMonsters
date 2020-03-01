@@ -17,7 +17,7 @@ public class ProductsPageManager {
     @FindBy(xpath = "//li[contains(text(),'Products')]")
     public WebElement headerOfProducts;
 
-    @FindBy(xpath = "//*[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']")
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']")
     public WebElement createButton;
 
     @FindBy(xpath = "//*[@class='o_form_sheet']")
