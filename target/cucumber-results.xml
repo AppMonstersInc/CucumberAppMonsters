@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="10" time="41.652244">
+    <testcase classname="As a Employee user should login" name="Login as Manager" time="7.123403">
+        <system-out>
+            <![CDATA[Then As a manager i log get in  to BRITE ERP................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Employee user should login" name="Verify home page BRITE ERP" time="2.11545">
+        <system-out>
+            <![CDATA[Given As a a employee|manager i am on Home page.............................passed
+And I verify if inventory Module Tab is displayed...........................passed
+Then Click to inventory Module button.......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering RulesButton is displayed" time="2.092161">
+        <system-out>
+            <![CDATA[Given Manager|Employee on inventory module page.............................passed
+And Verify reordering rules is displayed....................................passed
+Then Manager|Employee click to reordering rules button......................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Window" time="2.053004">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify Reordering Rules title is displayed.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify the reordering Rules page have select columns with" time="0.125677">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Checkboxes Does Not Selected" time="18.644676">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify reordering rules check boxes is enabled.........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The Reordering Rules Header" time="4.440832">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify reordering rules headers........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Validate The ProductName in Reordering Rules" time="0.309582">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify The ProductName in Reordering Rules.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Reordering Rules Table Is Displayed" time="2.053924">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+Then Verify Reordering Rules Table Is Displayed.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="As a Manager|Employee i should able to use reordering rules functionality" name="Verify Search Functionality On Reordering RulesPage" time="2.693535">
+        <system-out>
+            <![CDATA[Given Manager|Employee click to reordering rules button.....................passed
+And Click to search box.....................................................passed
+Then Verify Search Functionality On Reordering RulesPage....................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

@@ -1,0 +1,56 @@
+Feature: As a Employee user should login
+
+  @SmokeManager
+  Scenario: Login as Manager                     [90m# src/test/resources/features/login.feature:6[0m
+    [32mThen [0m[32mAs a manager i log get in  to BRITE ERP[0m [90m# login_steps.as_a_manager_i_log_get_in_to_BRITE_ERP()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify home page BRITE ERP                [90m# src/test/resources/features/login.feature:9[0m
+    [32mGiven [0m[32mAs a a employee|manager i am on Home page[0m   [90m# login_steps.as_a_a_employee_manager_i_am_on_Home_page()[0m
+    [32mAnd [0m[32mI verify if inventory Module Tab is displayed[0m [90m# login_steps.i_verify_if_inventory_Module_Tab_is_displayed()[0m
+    [32mThen [0m[32mClick to inventory Module button[0m             [90m# login_steps.click_to_inventory_Module_button()[0m
+
+Feature: As a Manager|Employee i should able to use reordering rules functionality
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Reordering RulesButton is displayed     [90m# src/test/resources/features/reorderingRules.feature:4[0m
+    [32mGiven [0m[32mManager|Employee on inventory module page[0m        [90m# ReorderingRules_steps.manager_Employee_on_inventory_module_page()[0m
+    [32mAnd [0m[32mVerify reordering rules is displayed[0m               [90m# ReorderingRules_steps.verify_reordering_rules_is_displayed()[0m
+    [32mThen [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Reordering Rules Window                  [90m# src/test/resources/features/reorderingRules.feature:10[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify Reordering Rules title is displayed[0m         [90m# ReorderingRules_steps.verify_Reordering_Rules_title_is_displayed()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify the reordering Rules page have select columns with                                       [90m# src/test/resources/features/reorderingRules.feature:15[0m
+  Name;Product;Minimum Quantity;Maximum Quantity;
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m                                                 [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;[0m [90m# ReorderingRules_steps.verify_reordering_rules_page_contains_columns_with_Name_Product_Minimum_Quantity_Maximum_Quantity()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Checkboxes Does Not Selected             [90m# src/test/resources/features/reorderingRules.feature:21[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify reordering rules check boxes is enabled[0m     [90m# ReorderingRules_steps.verify_reordering_rules_check_boxes_is_enabled()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Validate The Reordering Rules Header            [90m# src/test/resources/features/reorderingRules.feature:26[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify reordering rules headers[0m                    [90m# ReorderingRules_steps.verify_reordering_rules_headers()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Validate The ProductName in Reordering Rules    [90m# src/test/resources/features/reorderingRules.feature:31[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify The ProductName in Reordering Rules[0m         [90m# ReorderingRules_steps.verify_The_ProductName_in_Reordering_Rules()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Reordering Rules Table Is Displayed      [90m# src/test/resources/features/reorderingRules.feature:36[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mThen [0m[32mVerify Reordering Rules Table Is Displayed[0m         [90m# ReorderingRules_steps.verify_Reordering_Rules_Table_Is_Displayed()[0m
+
+  @SmokeEmployee @SmokeManager
+  Scenario: Verify Search Functionality On Reordering RulesPage [90m# src/test/resources/features/reorderingRules.feature:41[0m
+    [32mGiven [0m[32mManager|Employee click to reordering rules button[0m     [90m# ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()[0m
+    [32mAnd [0m[32mClick to search box[0m                                     [90m# ReorderingRules_steps.click_to_search_box()[0m
+    [32mThen [0m[32mVerify Search Functionality On Reordering RulesPage[0m    [90m# ReorderingRules_steps.verify_Search_Functionality_On_Reordering_RulesPage()[0m

@@ -18,14 +18,14 @@ public class Driver {
         if (driver == null) {
             switch (Config.getProperty("browser")){
                 case "chrome":
-                   // System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\Desktop\\chicagoselenimb14\\src\\drivers\\chromedriver.exe");
+                  // System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\Desktop\\chicagoselenimb14\\src\\drivers\\chromedriver.exe");
                    WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                    break;
+//                case "firefox":
+//                    WebDriverManager.firefoxdriver().setup();
+//                    driver = new FirefoxDriver();
+//                    break;
             }
 
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
