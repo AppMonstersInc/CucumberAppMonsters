@@ -254,8 +254,10 @@ formatter.match({
   "location": "Products_employee_step_defs.i_should_be_navigated_to_the_products_page()"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat step_definitions.products_employee_step_defs.Products_employee_step_defs.i_should_be_navigated_to_the_products_page(Products_employee_step_defs.java:29)\r\n\tat ✽.I should be navigated to the products page(src/test/resources/features/productsEmployee.feature:10)\r\n",
+  "status": "failed"
 });
+formatter.embedding("image/png", "embedded0.png");
 formatter.after({
   "status": "passed"
 });
@@ -788,6 +790,417 @@ formatter.result({
 formatter.after({
   "status": "passed"
 });
+formatter.uri("src/test/resources/features/scrapEmployee.feature");
+formatter.feature({
+  "name": "As User I should be able to Create, Import and use Searching func",
+  "description": "",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    },
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.scenario({
+  "name": "Verify Create Scrap Products buttons",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    },
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Scrap button",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Scrap_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on create button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_create_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to see form sheet",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_see_form_sheet()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Product text button is correct!",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Product_text_button_is_correct()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to input numbers on Quantity field",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_input_numbers_on_Quantity_field()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Quantity text button is correct!",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Quantity_text_button_is_correct()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to input info on Source Document field",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_input_info_on_Source_Document_field()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Source Document text button is correct!",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Source_Document_text_button_is_correct()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Expected Date filed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Expected_Date_filed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Expected Date text button is correct!",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Expected_Date_text_button_is_correct()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Discard Button",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Discard_Button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click Ok on alert window",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_Ok_on_alert_window()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verify Import Scrap products buttons",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    },
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Scrap button",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Scrap_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on import button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_import_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Test Import Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Test_Import_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Import Button in second page is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Import_Button_in_second_page_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Select a CSV or Excel file to import text is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Select_a_CSV_or_Excel_file_to_import_text_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Reload File Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Reload_File_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Load File Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Load_File_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Input Field is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Input_Field_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Help Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Help_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Cancel Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Cancel_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verify Scrap Search Buttons",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    },
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Scrap button",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Scrap_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on MangifyingGlass Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_MangifyingGlass_Button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Filter Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Filter_Button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Group By Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Group_By_Button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Product Selection is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Product_Selection_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Location Selection is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Location_Selection_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Scrap Location Selector is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Scrap_Location_Selector_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Add Custom Group Selector is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Add_Custom_Group_Selector_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click Favorites Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_Favorites_Button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Save Current Search is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Save_Current_Search_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify Add To My Dashboard is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Add_To_My_Dashboard_is_Displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to write in Search Input Field and click ENTER",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_write_in_Search_Input_Field_and_click_ENTER()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
 formatter.uri("src/test/resources/features/transfers.feature");
 formatter.feature({
   "name": "As a user I should be able to click transfers button to use transfers functionalities.",
@@ -1180,6 +1593,406 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
+formatter.uri("src/test/resources/features/zCloseDriver.feature");
+formatter.feature({
+  "name": "close driver",
+  "description": "",
+  "keyword": "Feature"
+});
+formatter.scenario({
+  "name": "Close all windows after test",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    },
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Close all windows logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Close.close_all_windows_logged_in()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+});played",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Reload_File_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Load File Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Load_File_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Input Field is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Input_Field_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Help Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Help_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Cancel Button is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Cancel_Button_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.embedding("image/png", "embedded5.png");
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verify Scrap Search Buttons",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeEmployee"
+    },
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on Scrap button",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Scrap_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should be able to click on MangifyingGlass Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_MangifyingGlass_Button()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d80.0.3987.122)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027MOEHUSSEIN\u0027, ip: \u0027192.168.1.223\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002712.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\\Users\\MOE97~1\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:63411}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: e21ea88bc385a50870bc8a38056a8f09\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\r\n\tat jdk.internal.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\r\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\r\n\tat step_definitions.scrap_steps_defs.scrap_Steps_Defs.user_should_be_able_to_click_on_MangifyingGlass_Button(scrap_Steps_Defs.java:144)\r\n\tat ✽.User should be able to click on MangifyingGlass Button(src/test/resources/features/scrapEmployee.feature:33)\r\n",
+  "status": "failed"
+});
+formatter.step({
+  "name": "User should be able to click on Filter Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Filter_Button()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "User should be able to click on Group By Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_on_Group_By_Button()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Product Selection is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Product_Selection_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Location Selection is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Location_Selection_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Scrap Location Selector is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Scrap_Location_Selector_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Add Custom Group Selector is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Add_Custom_Group_Selector_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "User should be able to click Favorites Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_click_Favorites_Button()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Save Current Search is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Save_Current_Search_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Verify Add To My Dashboard is Displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.verify_Add_To_My_Dashboard_is_Displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "User should be able to write in Search Input Field and click ENTER",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "scrap_Steps_Defs.user_should_be_able_to_write_in_Search_Input_Field_and_click_ENTER()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.embedding("image/png", "embedded6.png");
+formatter.after({
+  "status": "passed"
+});
+formatter.uri("src/test/resources/features/wearehouse.feature");
+formatter.feature({
+  "name": "Inventory configuration",
+  "description": "",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.scenario({
+  "name": "As a Manager I should be able to use Inventory Configuration in the home page",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Manager|Employee on inventory module page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "ReorderingRules_steps.manager_Employee_on_inventory_module_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As a Manager should be able to see the Warehouse Management",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_a_Manager_should_be_able_to_see_the_Warehouse_Management()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As a  manager should be able to click the Warehouse Management button",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_a_manager_should_be_able_to_click_the_Warehouse_Management_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verifying warehouse button",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Manager|Employee on inventory module page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "ReorderingRules_steps.manager_Employee_on_inventory_module_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As a manager should be able to click the Wearhouse button and be navigate to the Wearhouse page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_a_manager_should_be_able_to_click_the_Wearhouse_button_and_be_navigate_to_the_Wearhouse_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As manager should be able to see the search box",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_manager_should_be_able_to_see_the_search_box()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verify Operation types",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@SmokeManager"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Manager|Employee on inventory module page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "ReorderingRules_steps.manager_Employee_on_inventory_module_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As a manager should be able to click the Operations types button and be navigate to the Operations types page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_a_manager_should_be_able_to_click_the_Operations_types_button_and_be_navigate_to_the_Operations_types_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As a manager i should be able to create",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_a_manager_i_should_be_able_to_create()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As manager i should be able to click the import button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_manager_i_should_be_able_to_click_the_import_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "As a manager i should be able to click the search box",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Wearehouse_stepes.as_a_manager_i_should_be_able_to_click_the_search_box()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d80.0.3987.122)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027MOEHUSSEIN\u0027, ip: \u0027192.168.1.223\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002712.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\\Users\\MOE97~1\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:63411}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: e21ea88bc385a50870bc8a38056a8f09\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:326)\r\n\tat jdk.internal.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\r\n\tat com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat step_definitions.wearhouse.Wearehouse_stepes.as_a_manager_i_should_be_able_to_click_the_search_box(Wearehouse_stepes.java:127)\r\n\tat ✽.As a manager i should be able to click the search box(src/test/resources/features/wearehouse.feature:21)\r\n",
+  "status": "failed"
+});
+formatter.embedding("image/png", "embedded7.png");
 formatter.after({
   "status": "passed"
 });
