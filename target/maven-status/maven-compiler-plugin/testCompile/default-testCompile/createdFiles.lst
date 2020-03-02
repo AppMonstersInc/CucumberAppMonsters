@@ -1,0 +1,3 @@
+step_definitions\scrap_steps_defs\scrap_Steps_Defs.class
+runners\EmployeesParallelRunner.class
+runners\ManageParallelRunner.class
