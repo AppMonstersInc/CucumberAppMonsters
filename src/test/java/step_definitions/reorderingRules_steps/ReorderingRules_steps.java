@@ -2,6 +2,8 @@ package step_definitions.reorderingRules_steps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -10,6 +12,10 @@ import pages.ReorderingRulesPage;
 import utilities.Driver;
 import utilities.SeleniumUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,13 +44,24 @@ public class ReorderingRules_steps {
     }
 
     @Then("Verify reordering rules page contains columns with Name;Product;Minimum Quantity;Maximum Quantity;")
-    public void verify_reordering_rules_page_contains_columns_with_Name_Product_Minimum_Quantity_Maximum_Quantity() {
+    public void verify_reordering_rules_page_contains_columns_with_Name_Product_Minimum_Quantity_Maximum_Quantity() throws IOException {
         List<WebElement> excualList = reorderingRulesPage.listRecordSelector;
         List<String> expetedList = new ArrayList<>();
-        expetedList.add("Name");
-        expetedList.add("Product");
-        expetedList.add("Minimum Quantity");
-        expetedList.add("Maximum Quantity");
+        File file = new File("src/InventoryData.xlsx");
+        // System.out.println(file.exists());
+        //LOAD the fine into java memory using fileInputstream
+
+        FileInputStream fileInputStream = new FileInputStream(file);
+        //LOAD THE EXCEL WORKBOOK INTO THE JAVA CLASS
+
+        XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
+        //getting the sheet
+
+        XSSFSheet sheet = workbook.getSheet("Sheet1");
+        expetedList.add(sheet.getRow(0).getCell(0)+"");
+        expetedList.add(sheet.getRow(0).getCell(1)+"");
+        expetedList.add(sheet.getRow(0).getCell(2)+"");
+        expetedList.add(sheet.getRow(0).getCell(3)+"");
         int count = 0;
         for (int i = 0; i < expetedList.size(); i++) {
             if (excualList.get(i).getText().equals(expetedList.get(i))) {
