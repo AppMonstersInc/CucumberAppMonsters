@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Cucumber HTML Reports</td>
+              <td>1</td>
+            <td>01 Mar 2020, 20:59</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">Close.close_all_windows_logged_in()</td>
+              <td>2</td>
+              <td class="duration" data-value="1139355350">1.139</td>
+              <td class="duration" data-value="1139355350">1.369</td>
+              <td class="duration" data-value="2278710700">2.278</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Hooks.setup()</td>
+              <td>39</td>
+              <td class="duration" data-value="242400">0.000</td>
+              <td class="duration" data-value="242400">0.002</td>
+              <td class="duration" data-value="9453600">0.009</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Hooks.tearDown(Scenario)</td>
+              <td>39</td>
+              <td class="duration" data-value="58825392">0.058</td>
+              <td class="duration" data-value="58825392">1.160</td>
+              <td class="duration" data-value="2294190300">2.294</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_Adjustments_manager.as_a_Manager_Requester_clicks_Inventory_Adjustments_button()</td>
+              <td>2</td>
+              <td class="duration" data-value="274106000">0.274</td>
+              <td class="duration" data-value="274106000">0.315</td>
+              <td class="duration" data-value="548212000">0.548</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_Adjustments_manager.as_a_manager_i_can_choose_any_of_them()</td>
+              <td>1</td>
+              <td class="duration" data-value="83509200">0.083</td>
+              <td class="duration" data-value="83509200">0.083</td>
+              <td class="duration" data-value="83509200">0.083</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_Adjustments_manager.as_a_manager_i_should_click_the_search_button_to_type_and_to_find_exact_products()</td>
+              <td>1</td>
+              <td class="duration" data-value="1002001300">1.002</td>
+              <td class="duration" data-value="1002001300">1.002</td>
+              <td class="duration" data-value="1002001300">1.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_Adjustments_manager.as_a_manager_requester_should_be_able_to_click_all_three_buttons()</td>
+              <td>1</td>
+              <td class="duration" data-value="2410523900">2.410</td>
+              <td class="duration" data-value="2410523900">2.410</td>
+              <td class="duration" data-value="2410523900">2.410</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_Adjustments_manager.requester_has_to_see_Create_Import_and_Search_buttons_on_the_landing_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="2287001600">2.287</td>
+              <td class="duration" data-value="2287001600">2.287</td>
+              <td class="duration" data-value="2287001600">2.287</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_Adjustments_manager.search_funclitonalty_should_offer_all_products_which_we_are_trying_to_find()</td>
+              <td>1</td>
+              <td class="duration" data-value="2449056100">2.449</td>
+              <td class="duration" data-value="2449056100">2.449</td>
+              <td class="duration" data-value="2449056100">2.449</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_adjustments_employess.as_a_Employee_Requester_clicks_Inventory_Adjustments_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="902100">0.000</td>
+              <td class="duration" data-value="902100">0.000</td>
+              <td class="duration" data-value="902100">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_adjustments_employess.as_a_user_Requester_clicks_Inventory_Adjustments_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1399841800">1.399</td>
+              <td class="duration" data-value="1399841800">1.399</td>
+              <td class="duration" data-value="1399841800">1.399</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_adjustments_employess.as_a_user_i_can_choose_any_of_them()</td>
+              <td>1</td>
+              <td class="duration" data-value="67575900">0.067</td>
+              <td class="duration" data-value="67575900">0.067</td>
+              <td class="duration" data-value="67575900">0.067</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_adjustments_employess.as_a_user_i_should_click_the_search_button_to_type_and_to_find_exact_products()</td>
+              <td>1</td>
+              <td class="duration" data-value="180215500">0.180</td>
+              <td class="duration" data-value="180215500">0.180</td>
+              <td class="duration" data-value="180215500">0.180</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_adjustments_employess.as_a_user_requester_should_be_able_to_click_all_three_buttons()</td>
+              <td>1</td>
+              <td class="duration" data-value="2548421600">2.548</td>
+              <td class="duration" data-value="2548421600">2.548</td>
+              <td class="duration" data-value="2548421600">2.548</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_adjustments_employess.employee_has_to_see_Create_Import_and_Search_buttons_on_the_landing_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="839532800">0.839</td>
+              <td class="duration" data-value="839532800">0.839</td>
+              <td class="duration" data-value="839532800">0.839</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Inventory_adjustments_employess.search_functionality_should_offer_all_products_which_we_are_trying_to_find()</td>
+              <td>1</td>
+              <td class="duration" data-value="2427912900">2.427</td>
+              <td class="duration" data-value="2427912900">2.427</td>
+              <td class="duration" data-value="2427912900">2.427</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_Verify_Products_button_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="496965000">0.496</td>
+              <td class="duration" data-value="496965000">0.496</td>
+              <td class="duration" data-value="496965000">0.496</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_click_to_products_button()</td>
+              <td>2</td>
+              <td class="duration" data-value="3334191650">3.334</td>
+              <td class="duration" data-value="3334191650">3.462</td>
+              <td class="duration" data-value="6668383300">6.668</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_click_to_the_selected_item()</td>
+              <td>1</td>
+              <td class="duration" data-value="129294700">0.129</td>
+              <td class="duration" data-value="129294700">0.129</td>
+              <td class="duration" data-value="129294700">0.129</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_search_for_an_item()</td>
+              <td>1</td>
+              <td class="duration" data-value="303647500">0.303</td>
+              <td class="duration" data-value="303647500">0.303</td>
+              <td class="duration" data-value="303647500">0.303</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_should_be_navigated_to_selected_items_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="1549175800">1.549</td>
+              <td class="duration" data-value="1549175800">1.549</td>
+              <td class="duration" data-value="1549175800">1.549</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_should_be_navigated_to_the_products_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="29032700">0.029</td>
+              <td class="duration" data-value="29032700">0.029</td>
+              <td class="duration" data-value="29032700">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_verify_items_listed_by_name_as_searched()</td>
+              <td>1</td>
+              <td class="duration" data-value="49535600">0.049</td>
+              <td class="duration" data-value="49535600">0.049</td>
+              <td class="duration" data-value="49535600">0.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_verify_list_of_products_items_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="78115300">0.078</td>
+              <td class="duration" data-value="78115300">0.078</td>
+              <td class="duration" data-value="78115300">0.078</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_verify_products_page_is_opened()</td>
+              <td>1</td>
+              <td class="duration" data-value="18272000">0.018</td>
+              <td class="duration" data-value="18272000">0.018</td>
+              <td class="duration" data-value="18272000">0.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Products_employee_step_defs.i_verify_search_box_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="53641000">0.053</td>
+              <td class="duration" data-value="53641000">0.053</td>
+              <td class="duration" data-value="53641000">0.053</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.click_to_search_box()</td>
+              <td>2</td>
+              <td class="duration" data-value="79008900">0.079</td>
+              <td class="duration" data-value="79008900">0.080</td>
+              <td class="duration" data-value="158017800">0.158</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.manager_Employee_click_to_reordering_rules_button()</td>
+              <td>16</td>
+              <td class="duration" data-value="170311093">0.170</td>
+              <td class="duration" data-value="170311093">0.341</td>
+              <td class="duration" data-value="2724977500">2.724</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.manager_Employee_on_inventory_module_page()</td>
+              <td>5</td>
+              <td class="duration" data-value="2009318420">2.009</td>
+              <td class="duration" data-value="2009318420">2.034</td>
+              <td class="duration" data-value="10046592100">10.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_Reordering_Rules_Table_Is_Displayed()</td>
+              <td>2</td>
+              <td class="duration" data-value="1524725900">1.524</td>
+              <td class="duration" data-value="1524725900">2.068</td>
+              <td class="duration" data-value="3049451800">3.049</td>
+              <td class="failed">50.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_Reordering_Rules_title_is_displayed()</td>
+              <td>2</td>
+              <td class="duration" data-value="2088704900">2.088</td>
+              <td class="duration" data-value="2088704900">2.169</td>
+              <td class="duration" data-value="4177409800">4.177</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_Search_Functionality_On_Reordering_RulesPage()</td>
+              <td>2</td>
+              <td class="duration" data-value="7618672500">7.618</td>
+              <td class="duration" data-value="7618672500">14.315</td>
+              <td class="duration" data-value="15237345000">15.237</td>
+              <td class="failed">50.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_The_ProductName_in_Reordering_Rules()</td>
+              <td>2</td>
+              <td class="duration" data-value="1147839200">1.147</td>
+              <td class="duration" data-value="1147839200">1.243</td>
+              <td class="duration" data-value="2295678400">2.295</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_reordering_rules_check_boxes_is_enabled()</td>
+              <td>2</td>
+              <td class="duration" data-value="19389676600">19.389</td>
+              <td class="duration" data-value="19389676600">19.390</td>
+              <td class="duration" data-value="38779353200">38.779</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_reordering_rules_headers()</td>
+              <td>2</td>
+              <td class="duration" data-value="4671473950">4.671</td>
+              <td class="duration" data-value="4671473950">4.703</td>
+              <td class="duration" data-value="9342947900">9.342</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_reordering_rules_is_displayed()</td>
+              <td>2</td>
+              <td class="duration" data-value="71859250">0.071</td>
+              <td class="duration" data-value="71859250">0.079</td>
+              <td class="duration" data-value="143718500">0.143</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReorderingRules_steps.verify_reordering_rules_page_contains_columns_with_Name_Product_Minimum_Quantity_Maximum_Quantity()</td>
+              <td>2</td>
+              <td class="duration" data-value="969526000">0.969</td>
+              <td class="duration" data-value="969526000">1.007</td>
+              <td class="duration" data-value="1939052000">1.939</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Run_Scheduler_steps.accept_pop_ups()</td>
+              <td>1</td>
+              <td class="duration" data-value="503133900">0.503</td>
+              <td class="duration" data-value="503133900">0.503</td>
+              <td class="duration" data-value="503133900">0.503</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Run_Scheduler_steps.the_user_should_be_able_to_see_Run_scheduler_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="90749200">0.090</td>
+              <td class="duration" data-value="90749200">0.090</td>
+              <td class="duration" data-value="90749200">0.090</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Run_Scheduler_steps.user_should_be_able_to_click()</td>
+              <td>1</td>
+              <td class="duration" data-value="205123000">0.205</td>
+              <td class="duration" data-value="205123000">0.205</td>
+              <td class="duration" data-value="205123000">0.205</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Run_Scheduler_steps.user_should_be_able_tp_see_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="48403300">0.048</td>
+              <td class="duration" data-value="48403300">0.048</td>
+              <td class="duration" data-value="48403300">0.048</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.action_button_should_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="96600">0.000</td>
+              <td class="duration" data-value="96600">0.000</td>
+              <td class="duration" data-value="96600">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.theNewStockFormShouldBeOpen()</td>
+              <td>1</td>
+              <td class="duration" data-value="790742300">0.790</td>
+              <td class="duration" data-value="790742300">0.790</td>
+              <td class="duration" data-value="790742300">0.790</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_chooses_any_item()</td>
+              <td>1</td>
+              <td class="duration" data-value="2859703000">2.859</td>
+              <td class="duration" data-value="2859703000">2.859</td>
+              <td class="duration" data-value="2859703000">2.859</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_click_search_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="47000700">0.047</td>
+              <td class="duration" data-value="47000700">0.047</td>
+              <td class="duration" data-value="47000700">0.047</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_clicks_create_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="161367300">0.161</td>
+              <td class="duration" data-value="161367300">0.161</td>
+              <td class="duration" data-value="161367300">0.161</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_clicks_the_action_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="127515200">0.127</td>
+              <td class="duration" data-value="127515200">0.127</td>
+              <td class="duration" data-value="127515200">0.127</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_clicks_the_transfer_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="2293698650">2.293</td>
+              <td class="duration" data-value="2293698650">2.825</td>
+              <td class="duration" data-value="9174794600">9.174</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_should_be_able_to_click_the_delete_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="101800">0.000</td>
+              <td class="duration" data-value="101800">0.000</td>
+              <td class="duration" data-value="101800">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_should_be_able_to_see_all_stocks()</td>
+              <td>1</td>
+              <td class="duration" data-value="29907200">0.029</td>
+              <td class="duration" data-value="29907200">0.029</td>
+              <td class="duration" data-value="29907200">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_should_be_able_to_see_the_export_and_delete_modules_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="61189800">0.061</td>
+              <td class="duration" data-value="61189800">0.061</td>
+              <td class="duration" data-value="61189800">0.061</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Transfers_steps.the_user_should_be_able_to_write_and_click_the_search_box_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="79700">0.000</td>
+              <td class="duration" data-value="79700">0.000</td>
+              <td class="duration" data-value="79700">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_a_Manager_should_be_able_to_see_the_Warehouse_Management()</td>
+              <td>1</td>
+              <td class="duration" data-value="135663200">0.135</td>
+              <td class="duration" data-value="135663200">0.135</td>
+              <td class="duration" data-value="135663200">0.135</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_a_manager_i_should_be_able_to_click_the_search_box()</td>
+              <td>1</td>
+              <td class="duration" data-value="3280165800">3.280</td>
+              <td class="duration" data-value="3280165800">3.280</td>
+              <td class="duration" data-value="3280165800">3.280</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_a_manager_i_should_be_able_to_create()</td>
+              <td>1</td>
+              <td class="duration" data-value="4942620000">4.942</td>
+              <td class="duration" data-value="4942620000">4.942</td>
+              <td class="duration" data-value="4942620000">4.942</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_a_manager_should_be_able_to_click_the_Operations_types_button_and_be_navigate_to_the_Operations_types_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="136179900">0.136</td>
+              <td class="duration" data-value="136179900">0.136</td>
+              <td class="duration" data-value="136179900">0.136</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_a_manager_should_be_able_to_click_the_Warehouse_Management_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="239507200">0.239</td>
+              <td class="duration" data-value="239507200">0.239</td>
+              <td class="duration" data-value="239507200">0.239</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_a_manager_should_be_able_to_click_the_Wearhouse_button_and_be_navigate_to_the_Wearhouse_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="356253500">0.356</td>
+              <td class="duration" data-value="356253500">0.356</td>
+              <td class="duration" data-value="356253500">0.356</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_manager_i_should_be_able_to_click_the_import_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="14803391100">14.803</td>
+              <td class="duration" data-value="14803391100">14.803</td>
+              <td class="duration" data-value="14803391100">14.803</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Wearehouse_stepes.as_manager_should_be_able_to_see_the_search_box()</td>
+              <td>1</td>
+              <td class="duration" data-value="44132800">0.044</td>
+              <td class="duration" data-value="44132800">0.044</td>
+              <td class="duration" data-value="44132800">0.044</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">login_steps.as_a_a_employee_manager_i_am_on_Home_page()</td>
+              <td>6</td>
+              <td class="duration" data-value="2004667166">2.004</td>
+              <td class="duration" data-value="2004667166">2.026</td>
+              <td class="duration" data-value="12028003000">12.028</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">login_steps.as_a_employee_i_log_get_in_to_BRITE_ERP()</td>
+              <td>5</td>
+              <td class="duration" data-value="6013973080">6.013</td>
+              <td class="duration" data-value="6013973080">17.314</td>
+              <td class="duration" data-value="30069865400">30.069</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">login_steps.as_a_manager_i_log_get_in_to_BRITE_ERP()</td>
+              <td>1</td>
+              <td class="duration" data-value="15849544000">15.849</td>
+              <td class="duration" data-value="15849544000">15.849</td>
+              <td class="duration" data-value="15849544000">15.849</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">login_steps.click_to_inventory_Module_button()</td>
+              <td>10</td>
+              <td class="duration" data-value="631408700">0.631</td>
+              <td class="duration" data-value="631408700">4.757</td>
+              <td class="duration" data-value="6314087000">6.314</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">login_steps.i_verify_if_inventory_Module_Tab_is_displayed()</td>
+              <td>6</td>
+              <td class="duration" data-value="379889700">0.379</td>
+              <td class="duration" data-value="379889700">0.659</td>
+              <td class="duration" data-value="2279338200">2.279</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">poducts_manager_step_defs.click_on_the_create_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="10415795300">10.415</td>
+              <td class="duration" data-value="10415795300">10.415</td>
+              <td class="duration" data-value="10415795300">10.415</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">poducts_manager_step_defs.fill_out_the_form()</td>
+              <td>1</td>
+              <td class="duration" data-value="41800">0.000</td>
+              <td class="duration" data-value="41800">0.000</td>
+              <td class="duration" data-value="41800">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">poducts_manager_step_defs.manager_clicks_on_products_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="2143998200">2.143</td>
+              <td class="duration" data-value="2143998200">2.143</td>
+              <td class="duration" data-value="2143998200">2.143</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">poducts_manager_step_defs.manager_should_be_navigated_to_Products_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="585409800">0.585</td>
+              <td class="duration" data-value="585409800">0.585</td>
+              <td class="duration" data-value="585409800">0.585</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">poducts_manager_step_defs.verify_Products_button_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="856348800">0.856</td>
+              <td class="duration" data-value="856348800">0.856</td>
+              <td class="duration" data-value="856348800">0.856</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">poducts_manager_step_defs.verify_create_button_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="94626800">0.094</td>
+              <td class="duration" data-value="94626800">0.094</td>
+              <td class="duration" data-value="94626800">0.094</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">poducts_manager_step_defs.verify_new_product_is_added_to_the_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="13500">0.000</td>
+              <td class="duration" data-value="13500">0.000</td>
+              <td class="duration" data-value="13500">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>72</td>
+            <td>205</td>
+            <td class="duration">1.154</td>
+            <td class="duration">38.779</td>
+            <td class="duration">3:56.772</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
